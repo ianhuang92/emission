@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/fuel_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:text="Fuel Analysis Calculation.\nSelect Pollutant and enter required Data"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:spinnerMode="dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:entries="@array/pollutant"
+        android:layout_below="@+id/fuel_tv_title"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/fuel_et_fuel_usage"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/spinner"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@+id/fuel_tv_fuel_usage"
+        android:ems="10"
+        android:hint="Fuel used"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/fuel_tv_fuel_usage"
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fuel_et_fuel_usage"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/fuel_et_fuel_usage"
+        android:text="Fuel Usage, kg/hr"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fuel_et_OH"
+        android:layout_alignEnd="@+id/fuel_tv_fuel_usage"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fuel_tv_fuel_usage"
+        android:text="Operating Hours, hr/year"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/fuel_et_OH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fuel_et_fuel_usage"
+        android:layout_toEndOf="@+id/textView3"
+        android:ems="10"
+        android:hint="Annual run hrs"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/fuel_but_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="27dp"
+        android:text="Calculate" />
+
+    <Button
+        android:id="@+id/fuel_but_undifinde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fuel_but_cal"
+        android:layout_alignBottom="@+id/fuel_but_cal"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp"
+        android:text="Undefined" />
+
+    <TextView
+        android:id="@+id/fuel_tv_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/fuel_but_undifinde"
+        android:layout_alignStart="@+id/fuel_but_cal"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/fuel_tv_pc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fuel_et_PC"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/fuel_et_OH"
+        android:text="pollutant concentration \nin fuel: X%"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/fuel_et_PC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:ems="10"
+        android:hint="Example:5"
+        android:inputType="number"
+        android:text=""
+        android:textAlignment="center" />
+
+</RelativeLayout>
