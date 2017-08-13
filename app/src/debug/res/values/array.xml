@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pollutant">
+        <item>Sulfur Dioxide (SO2) </item>
+        <item>Carbon Monoxide (CO)</item>
+    </string-array>
+</resources>

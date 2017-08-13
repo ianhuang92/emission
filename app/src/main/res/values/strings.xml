@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Emission</string>
+    <string name="step1">Select Your Category</string>
 </resources>
