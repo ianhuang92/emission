@@ -1,22 +1,24 @@
-package monash.emission;
+package monash.emission.CoffeeRoastingFragment;
 
-import android.app.Activity;
-import android.app.Fragment;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
-import monash.emission.monash.emission.entity.CarbonMonoxide;
-import monash.emission.monash.emission.entity.Entity;
-import monash.emission.monash.emission.entity.SO2;
+import monash.emission.R;
+import monash.emission.entity.CarbonMonoxide;
+import monash.emission.entity.Entity;
+import monash.emission.entity.SO2;
 
 /**
  * Created by Ranger on 2017/8/13.
@@ -77,6 +79,15 @@ public class fuelAnalysis extends Fragment {
                 {
                   result = fU*0.01*pC*oH*substance.MW/substance.EW;
                     tvDisplay.setText("Emission of "+substance.name+" via Fuel Analysis:\n"+result+" kg/year.");
+                    if (result > 10000)  //10 tones per year
+                    {
+                        new AlertDialog.Builder(getActivity())
+                                .setTitle("Warning")
+                                .setMessage("You emission level is " + result + " ,which have exceed the threshold of '" + substance.name + "' (10000 tonnes per year)")
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setPositiveButton(android.R.string.yes, null)
+                                .setNegativeButton(android.R.string.no, null).show();
+                    }
                 }
                 else
                 {

@@ -13,5 +13,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Welcome to Emission Tracker"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="TODO:Weather info API"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:id="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Estimate My Emission"
+        android:layout_height="70dp"
+        android:layout_marginTop="73dp"
+        android:id="@+id/estimatebtn"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:layout_width="250dp"
+        android:textAllCaps="false" />
+
+    <Button
+        android:text="Manage My Emission"
+        android:layout_marginTop="70dp"
+        android:id="@+id/managebtn"
+        android:layout_below="@+id/estimatebtn"
+        android:layout_alignStart="@+id/estimatebtn"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
 </RelativeLayout>
