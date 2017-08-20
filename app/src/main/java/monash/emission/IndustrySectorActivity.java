@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
+/**
+ * For user to choose the industry that the user belongs to, from the area to specific industry.
+ */
 public class IndustrySectorActivity extends AppCompatActivity {
 
     private Spinner industryAreaSpinner, industrySpinner;
     private Button calculateBtn;
-
+    private Button infoBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,19 @@ public class IndustrySectorActivity extends AppCompatActivity {
                 if (industrySpinner.getSelectedItem().toString().equals("Coffee Roasting")){
                     Intent i = new Intent(getApplicationContext(),CalculationActivity.class);
                     i.putExtra("IndustryName","Coffee Roasting");
+                    i.putExtra("entrance","fuel");
+                    startActivity(i);
+                }
+            }
+        });
+        infoBtn = (Button) findViewById(R.id.reportBtn);
+        infoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (industrySpinner.getSelectedItem().toString().equals("Coffee Roasting")){
+                    Intent i = new Intent(getApplicationContext(),CalculationActivity.class);
+                    i.putExtra("IndustryName","Coffee Roasting");
+                    i.putExtra("entrance","info");
                     startActivity(i);
                 }
             }

@@ -19,23 +19,25 @@
         android:layout_alignParentStart="true"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorAccent" />
 
     <TextView
-        android:text="TODO:Weather info API"
+        android:text="Loading weather information......"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
-        android:id="@+id/textView2"
+        android:id="@+id/weatherInfo"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="18sp" />
 
     <Button
         android:text="Estimate My Emission"
         android:layout_height="70dp"
         android:layout_marginTop="73dp"
         android:id="@+id/estimatebtn"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/weatherInfo"
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
         android:layout_width="250dp"

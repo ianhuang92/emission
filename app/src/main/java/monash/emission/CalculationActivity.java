@@ -18,70 +18,51 @@ public class CalculationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private String industryName;
-
+    private String entrance;
+    private TabLayout tabLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculation);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        industryName = getIntent().getStringExtra("IndustryName");
+        industryName = getIntent().getStringExtra("IndustryName");// get the information from previous activity
+        entrance = getIntent().getStringExtra("entrance");
 
+        if (industryName.equals("Coffee Roasting")) // if user select Coffee Roasting industry and click on calculate button
+        {                                           // we display the fuel analysis page by default
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+            tabLayout.addTab(tabLayout.newTab().setText("Fuel Analysis"));          //set the name for all tabs
+            tabLayout.addTab(tabLayout.newTab().setText("Emission Factor"));
+            tabLayout.addTab(tabLayout.newTab().setText("More Information"));
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+            final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+            final PagerAdapter adapter = new CoffeePageAdapter
+                    (getSupportFragmentManager(), tabLayout.getTabCount());
+            viewPager.setAdapter(adapter);
+            viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+            tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                @Override
+                public void onTabSelected(TabLayout.Tab tab) {
+                    viewPager.setCurrentItem(tab.getPosition());
+                }
 
+                @Override
+                public void onTabUnselected(TabLayout.Tab tab) {
 
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                }
+
+                @Override
+                public void onTabReselected(TabLayout.Tab tab) {
+
+                }
+            });
+            if (entrance.equals("info")){       //If user click on the report information button on the Industry sector screen,
+                TabLayout.Tab tab = tabLayout.getTabAt(2);// we display the information page by default
+                tab.select();
             }
-        });*/
+        }
 
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.setDrawerListener(toggle);
-//        toggle.syncState();
-//
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
-/*
-        if (industryName.equals("Coffee Roasting")){
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new fuelAnalysis()).commit();
-        }*/
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Fuel Analysis"));
-        tabLayout.addTab(tabLayout.newTab().setText("Emission Factor"));
-        tabLayout.addTab(tabLayout.newTab().setText("More Information"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdapter adapter = new CoffeePageAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
     }
 
     @Override

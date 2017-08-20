@@ -2,14 +2,10 @@
     <string name="app_name">Emission</string>
     <string-array name="Industry_area">
         <item>Agriculture</item>
-        <item>Food</item>
-        <item>Transport</item>
-        <item>etc</item>
     </string-array>
 
     <string-array name="Industry">
         <item>Coffee Roasting</item>
-        <item>etc</item>
     </string-array>
     <string name="title_activity_calculation">CalculationActivity</string>
 

@@ -4,6 +4,7 @@ package monash.emission.CoffeeRoastingFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,9 @@ import monash.emission.entity.SO2;
 
 /**
  * Created by Ranger on 2017/8/13.
+ * fuel analysis
+ * using Abstract class entity
+ * using child classes of Entity: SO2, CarbonMonoxide
  */
 
 public class fuelAnalysis extends Fragment {
@@ -34,9 +38,9 @@ public class fuelAnalysis extends Fragment {
     private View vDisplayUnit;
     private Entity substance;
     private boolean itemSelected;
-    private int oH;
-    private int fU;
-    private int pC;
+    private int oH;  //operate hour
+    private int fU;  // fuel usage
+    private int pC;   //pollutant concentration
     private double result;
 
 
@@ -77,12 +81,19 @@ public class fuelAnalysis extends Fragment {
                 }
                 else if(getValue())
                 {
-                  result = fU*0.01*pC*oH*substance.MW/substance.EW;
+                  result = fU*0.01*pC*oH*substance.MW/substance.EW;  //Ekpy, i = Qf * pollutant concentration in fuel * (MWp / EWf) * OpHrs
+                 result = Double.parseDouble(String.format("%.2f", result));
+                    //where:
+                 //Ekpy, i = emissions of pollutant i, kg/yr
+                 // Qf = fuel use, kg/hr
+                 // MWp = molecular weight of pollutant emitted, kg/kg-mole
+                 //  EWf = elemental weight of substance in fuel, kg/kg-mole
+                 // OpHrs= operating hours, hr/yr
                     tvDisplay.setText("Emission of "+substance.name+" via Fuel Analysis:\n"+result+" kg/year.");
-                    if (result > 10000)  //10 tones per year
+                    if (result > 10000)  //check whether exceed the threshold 10 tones per year
                     {
                         new AlertDialog.Builder(getActivity())
-                                .setTitle("Warning")
+                                .setTitle(Html.fromHtml("<font color='#FF0000'>Warning</font>"))
                                 .setMessage("You emission level is " + result + " ,which have exceed the threshold of '" + substance.name + "' (10000 tonnes per year)")
                                 .setIcon(android.R.drawable.ic_dialog_alert)
                                 .setPositiveButton(android.R.string.yes, null)
@@ -103,6 +114,13 @@ public class fuelAnalysis extends Fragment {
 
     }
 
+    /**
+     * +    /*
+     +    convert text into desired data
+     +    data kept in oH,pC,fU
+     +    return false if fail to convert
+     +    return true if successful
+     +     */
     private boolean getValue()
     {
         try {
