@@ -42,6 +42,7 @@ public class fuelAnalysis extends Fragment {
     private int fU;  // fuel usage
     private int pC;   //pollutant concentration
     private double result;
+    private boolean percentageFlag;
 
 
 
@@ -54,6 +55,7 @@ public class fuelAnalysis extends Fragment {
         tvDisplay = (TextView) vDisplayUnit.findViewById(R.id.fuel_tv_display);
         spinner = (Spinner) vDisplayUnit.findViewById(R.id.spinner);
         itemSelected = false;
+        percentageFlag =false; //true if pollutant percentage is out of range of 0 to 100
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
@@ -102,7 +104,10 @@ public class fuelAnalysis extends Fragment {
                 }
                 else
                 {
+                    if (!percentageFlag)
                     Toast.makeText(getActivity(),"Input invalid. Integer expected.",Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getActivity(),"pollutant concentration entry must lie between 0 and 100.",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -127,6 +132,11 @@ public class fuelAnalysis extends Fragment {
             this.pC = Integer.parseInt(etPollutantConcentrate.getText().toString());
             this.oH = Integer.parseInt(etOperatingHour.getText().toString());
             this.fU = Integer.parseInt(etFuelFlow.getText().toString());
+            if (this.pC<0 || this.pC > 100) {
+                this.percentageFlag = true;
+                return false;
+            }
+
         }
         catch (NumberFormatException e)
         {

@@ -36,10 +36,12 @@ public class EmissionFactor extends Fragment {
     private Double activityRate;
     private Double efficiency;
     private double CO;
+    private boolean percentageFlag;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         vDisplayUnit = inflater.inflate(R.layout.fragment_emission_factor, container, false);
         isItemSelected = false;
+        percentageFlag = false;
         tvDisplay = (TextView)vDisplayUnit.findViewById(R.id.emission_factor_tv_display);
         etActivityRate=(EditText) vDisplayUnit.findViewById(R.id.emission_factor_et_ar) ;
         etEfficiency=(EditText)vDisplayUnit.findViewById(R.id.emission_factor_et_ce) ;
@@ -108,9 +110,13 @@ public class EmissionFactor extends Fragment {
                     }
                     tvDisplay.setText(output);
                 }
-                else
+                else if(!percentageFlag)
                 {
                     Toast.makeText(getActivity(),"Input invalid. Number expected.",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(),"Overall control efficiency entry must lie between 0 to 100.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -134,6 +140,10 @@ public class EmissionFactor extends Fragment {
         try {
             activityRate = Double.parseDouble(etActivityRate.getText().toString());
             efficiency = Double.parseDouble(etEfficiency.getText().toString());
+            if(efficiency<0 || efficiency>100)
+            {this.percentageFlag = true;
+                return false;
+            }
             return true;
         }
         catch (NumberFormatException e)
