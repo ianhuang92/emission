@@ -6,12 +6,14 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +55,13 @@ public class fuelAnalysis extends Fragment {
         etPollutantConcentrate=(EditText) vDisplayUnit.findViewById(R.id.fuel_et_PC);
         tvDisplay = (TextView) vDisplayUnit.findViewById(R.id.fuel_tv_display);
         spinner = (Spinner) vDisplayUnit.findViewById(R.id.spinner);
+        ImageView fuelTootip = (ImageView) vDisplayUnit.findViewById(R.id.fuelTooltip);
+        fuelTootip.setOnHoverListener(new View.OnHoverListener() {
+            @Override
+            public boolean onHover(View v, MotionEvent event) {
+                return false;
+            }
+        });
         itemSelected = false;
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
