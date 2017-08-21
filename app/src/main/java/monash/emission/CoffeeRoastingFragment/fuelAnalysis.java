@@ -44,6 +44,7 @@ public class fuelAnalysis extends Fragment {
     private int fU;  // fuel usage
     private int pC;   //pollutant concentration
     private double result;
+    private boolean percentageFlag;
 
 
 
@@ -111,7 +112,10 @@ public class fuelAnalysis extends Fragment {
                 }
                 else
                 {
+                    if (!percentageFlag)
                     Toast.makeText(getActivity(),"Input invalid. Integer expected.",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(getActivity(),"pollutant concentration entry must lie between 0 and 100.",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -136,6 +140,10 @@ public class fuelAnalysis extends Fragment {
             this.pC = Integer.parseInt(etPollutantConcentrate.getText().toString());
             this.oH = Integer.parseInt(etOperatingHour.getText().toString());
             this.fU = Integer.parseInt(etFuelFlow.getText().toString());
+            if (this.pC<0 || this.pC > 100) {
+                this.percentageFlag = true;
+                return false;
+            }
         }
         catch (NumberFormatException e)
         {
