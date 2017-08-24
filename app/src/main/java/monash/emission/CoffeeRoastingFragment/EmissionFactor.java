@@ -34,6 +34,7 @@ public class EmissionFactor extends Fragment {
     private TextView tvDisplay;
     private Button butCalculate;
     private Double activityRate;
+    private boolean percentageFlag;
     private Double efficiency;
     private double CO;
     private boolean percentageFlag;
