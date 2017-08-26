@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_coffeeSelection_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\nPlease select one methodology to continue:\n"
+        android:textAlignment="center" />
+
+    <RadioGroup android:id="@+id/frag_coffee_calMethod"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_coffeeSelection_fragment">
+
+        <RadioButton
+            android:id="@+id/radio_coffee_fuel_analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Fuel Analysis"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_coffee_factor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radio_coffee_fuel_analysis"
+            android:text="Emission Factor"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_coffee_direct_measurement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radio_coffee_factor"
+            android:text="Direct Measurements"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_coffee_mass_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radio_coffee_direct_measurement"
+            android:text="Mass Balance"
+            android:textAlignment="center" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/but_coffeeSelection_Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Next" />
+</RelativeLayout>
