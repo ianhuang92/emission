@@ -19,7 +19,19 @@ public class CoffeeRoastActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
         //sharedBundles = new ArrayList<>();
+
+
         sharedBundle = new Bundle();
+        //About this bundle
+        //Used Key -- Type -- Meaning
+        //CheckedName -- String -- Name of methodology selected
+        //CheckedID  -- int -- ID of radio button selected in group, starting from 0
+        //StartDate -- String -- start date selected, yyyy-MM-dd
+        //EndDate -- String -- end date selected, yyyy-MM-dd
+        //Duration -- int --number of days between end date and start date.
+        //AvgHour -- Double -- average running hour per day
+
+
         //fragment manager
         fragmentManager=getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeSelectionFragment()).commit();
