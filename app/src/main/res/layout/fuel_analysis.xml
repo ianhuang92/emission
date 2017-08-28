@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
@@ -33,7 +34,7 @@
         android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/fuel_tv_fuel_usage"
         android:ems="10"
-        android:hint="Fuel used"
+        android:hint="10-100"
         android:inputType="number"
         android:textAlignment="center" />
 
@@ -45,7 +46,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/fuel_et_fuel_usage"
         android:text="Fuel Usage, kg/hr"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textSize="18sp" />
 
     <TextView
@@ -58,6 +59,7 @@
         android:layout_below="@+id/fuel_tv_fuel_usage"
         android:text="Operating Hours, hr/year"
         android:textAlignment="center"
+
         android:textSize="18sp" />
 
     <EditText
@@ -67,7 +69,7 @@
         android:layout_below="@+id/fuel_et_fuel_usage"
         android:layout_toEndOf="@+id/textView3"
         android:ems="10"
-        android:hint="Annual run hrs"
+        android:hint="400-800"
         android:inputType="number"
         android:textAlignment="center" />
 
@@ -82,31 +84,6 @@
         android:textStyle="normal|bold"
         android:textColor="@android:color/background_dark" />
 
-    <TextView
-        android:id="@+id/fuel_tv_pc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/fuel_et_PC"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView3"
-        android:layout_toStartOf="@+id/fuel_et_OH"
-        android:text="pollutant concentration \nin fuel: X%"
-        android:textAlignment="center"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/fuel_et_PC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3"
-        android:ems="10"
-        android:hint="Example:5"
-        android:inputType="number"
-        android:text=""
-        android:textAlignment="center" />
-
     <Button
         android:id="@+id/fuel_but_cal"
         android:layout_width="wrap_content"
@@ -114,5 +91,38 @@
         android:text="Calculate"
         android:layout_marginTop="380dp"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/fuel_et_PC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="5-15"
+        android:inputType="number"
+        android:text=""
+        android:textAlignment="center"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/fuel_tv_pc" />
+
+    <TextView
+        android:id="@+id/fuel_tv_pc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pollutant concentration \nin fuel: X%"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/fuel_et_PC"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/qmk"
+        android:id="@+id/fuelTooltip"
+        android:layout_alignTop="@+id/fuel_tv_fuel_usage"
+        android:layout_toStartOf="@+id/fuel_et_PC"
+        android:layout_marginEnd="20dp" />
 
 </RelativeLayout>

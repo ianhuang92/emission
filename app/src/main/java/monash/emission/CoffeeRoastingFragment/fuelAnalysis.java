@@ -6,12 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,8 +57,16 @@ public class fuelAnalysis extends Fragment {
         etPollutantConcentrate=(EditText) vDisplayUnit.findViewById(R.id.fuel_et_PC);
         tvDisplay = (TextView) vDisplayUnit.findViewById(R.id.fuel_tv_display);
         spinner = (Spinner) vDisplayUnit.findViewById(R.id.spinner);
+        ImageView fuelTootip = (ImageView) vDisplayUnit.findViewById(R.id.fuelTooltip);
+        fuelTootip.setOnHoverListener(new View.OnHoverListener() {
+            @Override
+            public boolean onHover(View v, MotionEvent event) {
+                return false;
+            }
+        });
         itemSelected = false;
-        percentageFlag =false; //true if pollutant percentage is out of range of 0 to 100
+        getActivity().getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
@@ -106,8 +117,8 @@ public class fuelAnalysis extends Fragment {
                 {
                     if (!percentageFlag)
                     Toast.makeText(getActivity(),"Input invalid. Integer expected.",Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(getActivity(),"pollutant concentration entry must lie between 0 and 100.",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(getActivity(),"pollutant concentration entry must lie between 0 and 100.",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -136,7 +147,6 @@ public class fuelAnalysis extends Fragment {
                 this.percentageFlag = true;
                 return false;
             }
-
         }
         catch (NumberFormatException e)
         {

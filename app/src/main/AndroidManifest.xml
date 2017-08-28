@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".IndustrySectorActivity" />
+        <activity android:name=".CoffeeRoastingFuncV2.CoffeeRoastActivity"/>
         <activity
             android:name=".CalculationActivity"
             android:label="@string/title_activity_calculation"
