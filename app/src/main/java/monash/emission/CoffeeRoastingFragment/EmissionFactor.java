@@ -34,13 +34,15 @@ public class EmissionFactor extends Fragment {
     private TextView tvDisplay;
     private Button butCalculate;
     private Double activityRate;
-    private boolean percentageFlag;
+
     private Double efficiency;
     private double CO;
+    private boolean percentageFlag;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         vDisplayUnit = inflater.inflate(R.layout.fragment_emission_factor, container, false);
         isItemSelected = false;
+        percentageFlag = false;
         tvDisplay = (TextView)vDisplayUnit.findViewById(R.id.emission_factor_tv_display);
         etActivityRate=(EditText) vDisplayUnit.findViewById(R.id.emission_factor_et_ar) ;
         etEfficiency=(EditText)vDisplayUnit.findViewById(R.id.emission_factor_et_ce) ;

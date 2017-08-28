@@ -34,7 +34,7 @@
         android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/fuel_tv_fuel_usage"
         android:ems="10"
-        android:hint="Fuel used"
+        android:hint="10-100"
         android:inputType="number"
         android:textAlignment="center" />
 
@@ -69,7 +69,7 @@
         android:layout_below="@+id/fuel_et_fuel_usage"
         android:layout_toEndOf="@+id/textView3"
         android:ems="10"
-        android:hint="Annual run hrs"
+        android:hint="400-800"
         android:inputType="number"
         android:textAlignment="center" />
 
@@ -97,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Example:5"
+        android:hint="5-15"
         android:inputType="number"
         android:text=""
         android:textAlignment="center"

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import monash.emission.CoffeeRoastingFuncV2.CoffeeRoastActivity;
+
 /**
  * For user to choose the industry that the user belongs to, from the area to specific industry.
  */
@@ -26,7 +28,8 @@ public class IndustrySectorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (industrySpinner.getSelectedItem().toString().equals("Coffee Roasting")){
-                    Intent i = new Intent(getApplicationContext(),CalculationActivity.class);
+                    //modified, redirected to v2 activity
+                    Intent i = new Intent(getApplicationContext(),CoffeeRoastActivity.class);
                     i.putExtra("IndustryName","Coffee Roasting");
                     i.putExtra("entrance","fuel");
                     startActivity(i);
