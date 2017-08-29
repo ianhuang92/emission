@@ -131,8 +131,14 @@ public class CoffeeDurationFragment extends Fragment {
             return false;
         }
         Double avgHr;
+
        try {
            avgHr = Double.parseDouble(etAvgHr.getText().toString());
+           if (avgHr>24)
+           {
+               Toast.makeText(c, "Daily operating hours shall not be greater than 24.", Toast.LENGTH_SHORT).show();
+               return false;
+           }
        }
        catch (NumberFormatException e)  //as input data has been limited as number decimal in xml file, this shall not happen
        {
@@ -144,6 +150,7 @@ public class CoffeeDurationFragment extends Fragment {
            Toast.makeText(c,"Null pointer exception. Please contact Vendor to report this bug.  ",Toast.LENGTH_SHORT).show();
            return false;
        }
+
         int duration = DateCalculation.getGapCount(startDate,endDate);
 
 

@@ -66,7 +66,10 @@ private View vDisplayUnit;
         //navigate to your following fragments
         //modify following statement if needed
         //TODO
-            c.fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeDurationFragment()).commit();
+        if(checkedID == 3)
+            c.fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeInfoMBFragment()).commit();
+        else
+            c.fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeInfoDMFragment()).commit();
             }
 
         });
