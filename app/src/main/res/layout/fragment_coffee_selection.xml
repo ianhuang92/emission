@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_coffeeSelection_fragment"
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:text="\nPlease select one methodology \n"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_marginTop="12dp"
+    android:layout_height="wrap_content">
+    <RadioGroup android:id="@+id/frag_coffee_calMethod"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+>
+
+        <RadioButton
+            android:id="@+id/radio_coffee_fuel_analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Fuel Analysis"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_coffee_factor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radio_coffee_fuel_analysis"
+            android:text="Emission Factor"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_coffee_direct_measurement"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radio_coffee_factor"
+            android:text="Direct Measurements"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:layout_marginTop="12dp"
+            android:id="@+id/radio_coffee_mass_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radio_coffee_direct_measurement"
+            android:text="Mass Balance"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center" />
+    </RadioGroup>
+
+    <ImageView
+        android:layout_width="28dp"
+        app:srcCompat="@drawable/qmk"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-19dp"
+        android:layout_toEndOf="@+id/frag_coffee_calMethod"
+        android:id="@+id/helpFuel"
+        android:layout_height="28dp" />
+
+    <ImageView
+        android:layout_width="28dp"
+        app:srcCompat="@drawable/qmk"
+
+        android:id="@+id/helpEF"
+        android:layout_height="28dp"
+        android:layout_below="@+id/helpFuel"
+        android:layout_marginLeft="-10dp"
+        android:layout_toEndOf="@+id/frag_coffee_calMethod"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="28dp"
+        app:srcCompat="@drawable/qmk"
+        android:id="@+id/helpDM"
+        android:layout_height="28dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/helpEF"
+        android:layout_toEndOf="@+id/frag_coffee_calMethod"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:layout_width="28dp"
+        app:srcCompat="@drawable/qmk"
+        android:id="@+id/helpMB"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="-22dp"
+        android:layout_height="28dp"
+        android:layout_below="@+id/helpDM"
+        android:layout_toEndOf="@+id/frag_coffee_calMethod" />
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/but_coffeeSelection_Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_centerHorizontal="true"
+        android:text="Next" />
+    </RelativeLayout>
+</LinearLayout>
