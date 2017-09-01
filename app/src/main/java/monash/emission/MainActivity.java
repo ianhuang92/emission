@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import monash.emission.EmissionManagement.UserDashboard;
+
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
     private TextView weatherText;
@@ -30,6 +32,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         setContentView(R.layout.activity_main);
         Button manageBtn = (Button)findViewById(R.id.managebtn);
         manageBtn.setEnabled(false);
+        manageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), UserDashboard.class);
+                startActivity(i);
+            }
+        });
         Button estimateBtn = (Button) findViewById(R.id.estimatebtn); //for iteration1 , the manage button wont reply
         estimateBtn.setOnClickListener(new View.OnClickListener() {
             @Override

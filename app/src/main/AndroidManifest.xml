@@ -19,12 +19,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".IndustrySectorActivity" />
-        <activity android:name=".CoffeeRoastingFuncV2.CoffeeRoastActivity"/>
+        <activity android:name=".CoffeeRoastingFuncV2.CoffeeRoastActivity" />
         <activity
             android:name=".CalculationActivity"
             android:label="@string/title_activity_calculation"
-            android:theme="@style/AppTheme"
-            ></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EmissionManagement.UserDashboard"
+            android:label="@string/title_activity_user_dashboard"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

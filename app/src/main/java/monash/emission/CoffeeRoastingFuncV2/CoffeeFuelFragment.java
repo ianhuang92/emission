@@ -55,11 +55,14 @@ public class CoffeeFuelFragment extends Fragment {
                 if (fuelBtn.getText().toString().startsWith("G")){
                     concentrationRateCO[0] = 2.34;
                     concentrationRateSO2[0] = 1.17;
+                    c.sharedBundle.putString("fuel","Gasoline");
                 }else if(fuelBtn.getText().toString().startsWith("F")){
                     concentrationRateCO[0] = 3.45;
+                    c.sharedBundle.putString("fuel","Fossil fuel");
                     concentrationRateSO2[0] = 3.2;
                 }else if(fuelBtn.getText().toString().startsWith("D")){
                     concentrationRateCO[0] = 6;
+                    c.sharedBundle.putString("fuel","Diesel");
                     concentrationRateSO2[0] = 0.001;
                 }
                 if (concentrationRateCO[0] == 0){

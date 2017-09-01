@@ -1,35 +1,47 @@
 package monash.emission.CoffeeRoastingFuncV2;
 
 
+import android.app.Dialog;
+import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import monash.emission.R;
 import monash.emission.entity.CarbonMonoxide;
+import monash.emission.entity.EmissionRecord;
 import monash.emission.entity.SO2;
+import monash.emission.entity.UserInfo;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CoffeeResultFragment extends Fragment {
 
+    public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private View vResult;
     private CoffeeRoastActivity c;
     private double resultSO2;
     private double resultCO;
     private final String[] mItems = {"Batch Roaster with Thermal Oxidiser","Continuous Cooler with Cyclone","Continuous Roaster","Continuous Roaster with Thermal Oxidiser","Green Coffee Bean Screening, Handling, and Storage System with Fabric Filter"};
 
+    SharedPreferences sharePreference;
+    private static final String myPreference = "MySharedPreference";
     private double CO;
     public CoffeeResultFragment() {
         // Required empty public constructor
@@ -45,16 +57,18 @@ public class CoffeeResultFragment extends Fragment {
         TextView COText = (TextView)vResult.findViewById(R.id.resultCO);
         TextView dateText = (TextView)vResult.findViewById(R.id.dateText);
         TextView recommandation = (TextView)vResult.findViewById(R.id.recommandation);
+        sharePreference = getActivity().getSharedPreferences(myPreference, Context.MODE_PRIVATE);
         c = (CoffeeRoastActivity)getActivity();
         int type = c.sharedBundle.getInt("CheckedID");
 
         double pCs = c.sharedBundle.getDouble("SO2");
         double pCc = c.sharedBundle.getDouble("CO");
         double fU = c.sharedBundle.getDouble("usage");
+        final String startDate = c.sharedBundle.getString("StartDate");
+        final String endDate = c.sharedBundle.getString("EndDate");
         if (type == 0){ //fuel analysis
-            String startDate = c.sharedBundle.getString("StartDate");
-            String endDate = c.sharedBundle.getString("EndDate");
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+
             dateText.setText("From " + startDate + " to " + endDate);
             double oH = 0;
 
@@ -162,6 +176,59 @@ public class CoffeeResultFragment extends Fragment {
                         .setNegativeButton(android.R.string.no, null).show();
             }
         }
+        Button record = (Button)vResult.findViewById(R.id.recordBtn);
+        record.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.dialog);
+                dialog.setTitle("Data Saved");
+                TextView detail = (TextView)dialog.findViewById(R.id.detailText);
+                detail.setText("From " + startDate + " to " + endDate + "\n"
+                + "Fuel Type: " + c.sharedBundle.getString("fuel") + "\n" + "SO2 level: " + resultSO2 + "\nCO level: " + resultCO + "\nUser: Guest" );
+                try {
+                    EmissionRecord record = new EmissionRecord("pollutant","SO2",sdf.parse(startDate),sdf.parse(endDate),sdf.parse(String.valueOf(new Date())),resultSO2);
+                    EmissionRecord record2 = new EmissionRecord("pollutant","CO",sdf.parse(startDate),sdf.parse(endDate),sdf.parse(String.valueOf(new Date())),resultCO);
+                    ArrayList<EmissionRecord> er = new ArrayList<EmissionRecord>();
+                    er.add(record);
+                    er.add(record2);
+
+                    if(c.sharedBundle.getInt("login") == 0){
+                        String user = sharePreference.getString("guest",null);
+                        if (user == null){
+                            //create new guest
+                            UserInfo guest = new UserInfo("guest","guest","Coffee Roasting",er);
+                            SharedPreferences.Editor editor = sharePreference.edit();
+                            editor.putString("guest", new Gson().toJson(guest));
+                            editor.commit();
+                        }else{
+                            UserInfo guest = new Gson().fromJson(user,UserInfo.class);
+                            guest.addEmission(record);
+                            guest.addEmission(record2);
+                        }
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                Button ok = (Button) dialog.findViewById(R.id.okBTN);
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+//                Button dashboard = (Button)dialog.findViewById(R.id.dashboardBTN);
+//                dashboard.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//
+//                    }
+//                });
+                dialog.show();
+            }
+        });
         return vResult;
     }
     /* This method is used to find the no of days between the given dates */

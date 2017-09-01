@@ -59,6 +59,7 @@ private View vDisplayUnit;
         Bundle bundle = new Bundle();
         bundle.putString("CheckedName",checkedMsg);
         bundle.putInt("CheckedID",checkedID);
+        c.sharedBundle.putInt("login",0);
         //c.sharedBundles.add(bundle);
         c.sharedBundle = bundle;
         FragmentTransaction ft = c.fragmentManager.beginTransaction();
@@ -71,13 +72,15 @@ private View vDisplayUnit;
             ft.replace(R.id.content_frame, new CoffeeEFFragment());
             ft.addToBackStack("CoffeeSlt2Duration");
             ft.commit();
+        }else if (checkedID == 3){
+            c.fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeInfoMBFragment()).commit();
         }
     else
         //navigate to your following fragments
         //modify following statement if needed
         //TODO
-            c.fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeDurationFragment()).commit();
-            }
+            c.fragmentManager.beginTransaction().replace(R.id.content_frame, new CoffeeInfoDMFragment()).commit();
+    }
 
         });
 

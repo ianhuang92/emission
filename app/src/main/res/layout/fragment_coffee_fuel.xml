@@ -88,7 +88,7 @@
         android:textAlignment="textEnd" />
 
     <TextView
-        android:text="Kg"
+        android:text="Litre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView8"
