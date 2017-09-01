@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="49dp"
+            android:text="Guest Mode"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_below="@+id/tv_account_repw"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="34dp" />
+
+        <ToggleButton
+            android:id="@+id/fragment_account_toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/textView14"
+            android:layout_marginEnd="45dp"
+            android:text="ToggleButton" />
+
+        <TextView
+            android:id="@+id/tv_account_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="65dp"
+            android:text="User name:"
+            android:textSize="18sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/textView14" />
+
+        <EditText
+            android:id="@+id/et_account_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/tv_account_un"
+            android:layout_marginEnd="13dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tv_account_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignStart="@+id/tv_account_un"
+            android:layout_below="@+id/et_account_username"
+            android:layout_marginTop="34dp"
+            android:text="Password:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_account_repw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignStart="@+id/tv_account_pw"
+            android:layout_below="@+id/et_account_passwd"
+            android:layout_marginTop="27dp"
+            android:text="Repeat\nPassword:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_account_passwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/et_account_username"
+            android:layout_alignTop="@+id/tv_account_pw"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/et_account_repw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/et_account_passwd"
+            android:layout_alignTop="@+id/tv_account_repw"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/but_account_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="NEXT"
+            android:layout_below="@+id/fragment_account_toggleButton"
+            android:layout_alignStart="@+id/fragment_account_toggleButton" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton"
+            android:textOff="TAP TO SIGN UP"
+            android:textOn="TAP TO LOGIN"
+            android:checked="true"
+            android:layout_alignBaseline="@+id/but_account_next"
+            android:layout_alignBottom="@+id/but_account_next"
+            android:layout_alignStart="@+id/textView14" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
