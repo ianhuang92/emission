@@ -17,7 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import monash.emission.EmissionManagement.UserDashboard;
+import monash.emission.CoffeeRoastingFuncV2.CoffeeRoastActivity;
+import monash.emission.account.AccountActivity;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
@@ -31,11 +32,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button manageBtn = (Button)findViewById(R.id.managebtn);
-        manageBtn.setEnabled(false);
+
         manageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), UserDashboard.class);
+                Intent i = new Intent(getApplicationContext(), AccountActivity.class);
                 startActivity(i);
             }
         });
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         estimateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),IndustrySectorActivity.class);
+                Intent i = new Intent(getApplicationContext(),CoffeeRoastActivity.class);
+                i.putExtra("IndustryName","Coffee Roasting");
+                i.putExtra("entrance","fuel");
                 startActivity(i);
             }
         });

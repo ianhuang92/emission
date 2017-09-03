@@ -10,7 +10,7 @@
         android:layout_marginTop="25dp"
         android:textColor="@android:color/black"
         android:layout_height="wrap_content"
-        android:text="\nPlease select one methodology \n"
+        android:text="\nPlease select one methodology to estimate emission\n"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="normal|bold" />
@@ -21,7 +21,7 @@
     <RadioGroup android:id="@+id/frag_coffee_calMethod"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="46dp"
 >
 
         <RadioButton
@@ -103,6 +103,38 @@
         android:layout_height="28dp"
         android:layout_below="@+id/helpDM"
         android:layout_toEndOf="@+id/frag_coffee_calMethod" />
+
+    <TextView
+        android:text="(Calculation involved)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:layout_alignTop="@+id/helpEF"
+        android:layout_toEndOf="@+id/helpEF" />
+
+    <TextView
+        android:text="(Calculation involved)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:layout_above="@+id/helpEF"
+        android:layout_toEndOf="@+id/helpFuel" />
+
+    <TextView
+        android:text="(Information only)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView21"
+        android:layout_alignBottom="@+id/helpDM"
+        android:layout_alignEnd="@+id/textView20" />
+
+    <TextView
+        android:text="(Information only)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView17"
+        android:layout_alignBottom="@+id/helpMB"
+        android:layout_toEndOf="@+id/helpEF" />
 </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

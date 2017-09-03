@@ -11,15 +11,15 @@ public class EmissionRecord {
     private String emissionName;
     private Date startDate;
     private Date endDate;
-    private Date recordDate;
+   // private Date recordDate;
     private double level;
 
-    public EmissionRecord(String emissionType, String emissionName, Date startDate, Date endDate, Date recordDate, double level) {
+    public EmissionRecord(String emissionType, String emissionName, Date startDate, Date endDate, double level) {
         this.emissionType = emissionType;
         this.emissionName = emissionName;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.recordDate = recordDate;
+      //  this.recordDate = recordDate;
         this.level = level;
     }
 
@@ -55,13 +55,13 @@ public class EmissionRecord {
         this.endDate = endDate;
     }
 
-    public Date getRecordDate() {
+/*    public Date getRecordDate() {
         return recordDate;
     }
 
     public void setRecordDate(Date recordDate) {
         this.recordDate = recordDate;
-    }
+    }*/
 
     public double getLevel() {
         return level;

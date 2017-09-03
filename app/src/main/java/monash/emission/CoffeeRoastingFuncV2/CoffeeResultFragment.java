@@ -3,6 +3,7 @@ package monash.emission.CoffeeRoastingFuncV2;
 
 import android.app.Dialog;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -34,6 +35,7 @@ import monash.emission.entity.UserInfo;
 public class CoffeeResultFragment extends Fragment {
 
     public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public static SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
     private View vResult;
     private CoffeeRoastActivity c;
     private double resultSO2;
@@ -177,6 +179,16 @@ public class CoffeeResultFragment extends Fragment {
             }
         }
         Button record = (Button)vResult.findViewById(R.id.recordBtn);
+        Button recal = (Button)vResult.findViewById(R.id.recalBTN);
+        recal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = c.fragmentManager.beginTransaction();
+                ft.replace(R.id.content_frame, new CoffeeSelectionFragment());
+                ft.addToBackStack("CoffeeSlt2Duration");
+                ft.commit();
+            }
+        });
         record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,8 +199,8 @@ public class CoffeeResultFragment extends Fragment {
                 detail.setText("From " + startDate + " to " + endDate + "\n"
                 + "Fuel Type: " + c.sharedBundle.getString("fuel") + "\n" + "SO2 level: " + resultSO2 + "\nCO level: " + resultCO + "\nUser: Guest" );
                 try {
-                    EmissionRecord record = new EmissionRecord("pollutant","SO2",sdf.parse(startDate),sdf.parse(endDate),sdf.parse(String.valueOf(new Date())),resultSO2);
-                    EmissionRecord record2 = new EmissionRecord("pollutant","CO",sdf.parse(startDate),sdf.parse(endDate),sdf.parse(String.valueOf(new Date())),resultCO);
+                    EmissionRecord record = new EmissionRecord("pollutant","SO2",sdf.parse(startDate),sdf.parse(endDate),resultSO2);
+                    EmissionRecord record2 = new EmissionRecord("pollutant","CO",sdf.parse(startDate),sdf.parse(endDate),resultCO);
                     ArrayList<EmissionRecord> er = new ArrayList<EmissionRecord>();
                     er.add(record);
                     er.add(record2);
@@ -217,6 +229,10 @@ public class CoffeeResultFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();
+                        FragmentTransaction ft = c.fragmentManager.beginTransaction();
+                        ft.replace(R.id.content_frame, new CoffeeSelectionFragment());
+                        ft.addToBackStack("CoffeeSlt2Duration");
+                        ft.commit();
                     }
                 });
 //                Button dashboard = (Button)dialog.findViewById(R.id.dashboardBTN);

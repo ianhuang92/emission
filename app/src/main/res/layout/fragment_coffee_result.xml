@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -53,16 +53,6 @@
             android:layout_below="@+id/textView10"
             android:layout_alignParentStart="true" />
 
-        <Button
-            android:text="Record Data"
-            android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="63dp"
-            android:id="@+id/recordBtn"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
         <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
@@ -74,5 +64,26 @@
             android:layout_alignStart="@+id/resultCO"
             android:textSize="18sp" />
 
+        <Button
+            android:text="Calculate again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="65dp"
+            android:id="@+id/recalBTN" />
+
+        <Button
+            android:text="Record Data"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recordBtn"
+            android:layout_alignBaseline="@+id/recalBTN"
+            android:layout_alignBottom="@+id/recalBTN"
+            android:layout_toEndOf="@+id/recalBTN"
+            android:layout_marginStart="26dp" />
+
     </RelativeLayout>
-</FrameLayout>
+</RelativeLayout>

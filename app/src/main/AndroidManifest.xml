@@ -25,9 +25,10 @@
             android:label="@string/title_activity_calculation"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".EmissionManagement.UserDashboard"
+            android:name=".account.UserDashboard"
             android:label="@string/title_activity_user_dashboard"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".account.AccountActivity"></activity>
     </application>
 
 </manifest>

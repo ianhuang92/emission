@@ -20,20 +20,12 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="normal|bold"
-        android:textColor="@color/colorAccent" />
-
-    <TextView
-        android:text="Loading weather information......"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:id="@+id/weatherInfo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="18sp" />
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textView22" />
 
     <Button
         android:text="Estimate My Emission"
+
         android:layout_height="70dp"
         android:layout_marginTop="73dp"
         android:id="@+id/estimatebtn"
@@ -41,7 +33,9 @@
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
         android:layout_width="250dp"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        >
+    </Button>
 
     <Button
         android:text="Manage My Emission"
@@ -53,4 +47,27 @@
         android:layout_height="70dp"
         android:textSize="18sp"
         android:textAllCaps="false" />
+
+    <TextView
+        android:text="Designed for Coffee Roasting Industry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView23"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/textView22"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|italic"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <TextView
+        android:text="Loading weather information......"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:id="@+id/weatherInfo"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView23"
+        android:layout_alignStart="@+id/estimatebtn"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 </RelativeLayout>

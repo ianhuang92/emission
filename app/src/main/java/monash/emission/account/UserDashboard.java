@@ -1,4 +1,4 @@
-package monash.emission.EmissionManagement;
+package monash.emission.account;
 
 import android.app.FragmentManager;
 import android.content.Context;
@@ -13,10 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.gson.Gson;
-
 import monash.emission.R;
-import monash.emission.entity.UserInfo;
 
 public class UserDashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +22,9 @@ public class UserDashboard extends AppCompatActivity
     SharedPreferences sharePreference;
     private static final String myPreference = "MySharedPreference";
 
+    protected Bundle userBundle;
+    protected FragmentManager fragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,7 @@ public class UserDashboard extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         sharePreference = getSharedPreferences(myPreference, Context.MODE_PRIVATE);
-
+        userBundle = getIntent().getBundleExtra("bundle");
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,16 +51,10 @@ public class UserDashboard extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        String user = sharePreference.getString("guest",null);
-        if (user == null){
-
-        }else{
-            UserInfo guest = new Gson().fromJson(user,UserInfo.class);
-        }
 
 
 
-        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new DashboardFragment()).commit();
 
 

@@ -102,11 +102,6 @@ public class CoffeeDurationFragment extends Fragment {
             }
         });
 
-
-
-
-
-
         return vDisplayUnit;
     }
 
