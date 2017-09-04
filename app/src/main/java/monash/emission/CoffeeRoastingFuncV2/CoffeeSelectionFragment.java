@@ -17,7 +17,9 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import monash.emission.MainActivity;
 import monash.emission.R;
+import monash.emission.account.AccountActivity;
 
 /**
  * Created by Ranger on 2017/8/25.
@@ -29,6 +31,7 @@ public class CoffeeSelectionFragment extends Fragment {
     private String checkedMsg;
     private Button butNext;
     private CoffeeRoastActivity c;
+    private Button butHome;
 
 private View vDisplayUnit;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,10 +39,19 @@ private View vDisplayUnit;
         vDisplayUnit = inflater.inflate(R.layout.fragment_coffee_selection, container, false);
         c=(CoffeeRoastActivity)getActivity();
         butNext = (Button)vDisplayUnit.findViewById(R.id.but_coffeeSelection_Next) ;
+        butHome = (Button)vDisplayUnit.findViewById(R.id.but_coffeeSelection_Home) ;;
 
 
 //init radio group and set listener
         rGroup = (RadioGroup)vDisplayUnit.findViewById(R.id.frag_coffee_calMethod);
+
+        butHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(c.getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
 
     butNext.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -69,7 +81,7 @@ private View vDisplayUnit;
             ft.addToBackStack("CoffeeSlt2Duration");
             ft.commit();
         }else if ( checkedID == 1){
-            ft.replace(R.id.content_frame, new CoffeeEFFragment());
+            ft.replace(R.id.content_frame, new CoffeeDurationFragment());
             ft.addToBackStack("CoffeeSlt2Duration");
             ft.commit();
         }else if (checkedID == 3){

@@ -39,7 +39,7 @@
                 android:text="Gasoline "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="false"
+                android:checked="true"
                 android:textSize="18sp" />
 
 
@@ -47,7 +47,7 @@
                 android:layout_marginTop="43dp"
                 android:id="@+id/ff"
                 android:text="Fossil fuel"
-
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
@@ -68,7 +68,7 @@
         android:text="Total Fuel Usage: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="118dp"
         android:id="@+id/textView8"
         android:textSize="18sp"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -82,7 +82,7 @@
         android:ems="10"
         android:layout_below="@+id/fuelRadio"
         android:layout_toEndOf="@+id/textView8"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="105dp"
         android:id="@+id/fuelUsageInput"
         android:layout_width="100dp"
         android:textAlignment="textEnd" />
@@ -121,6 +121,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:src="@drawable/ff"
+        android:visibility="gone"
         android:id="@+id/imageView5"
         android:layout_below="@+id/imageView4"
         android:layout_alignStart="@+id/imageView4" />

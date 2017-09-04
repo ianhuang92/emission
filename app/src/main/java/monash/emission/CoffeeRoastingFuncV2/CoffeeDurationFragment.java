@@ -94,9 +94,15 @@ public class CoffeeDurationFragment extends Fragment {
                     //Key Duration, type int, meaning number of days between end date and start date.
                     //Key AvgHour, type Double, meaning average running hour per day
                     FragmentTransaction ft = c.fragmentManager.beginTransaction();
-                    ft.replace(R.id.content_frame, new CoffeeFuelFragment());
-                    ft.addToBackStack("CoffeeSlt2Duration");
-                    ft.commit();
+                    if (c.sharedBundle.getInt("CheckedID")==0) {
+                        ft.replace(R.id.content_frame, new CoffeeFuelFragment());
+                        ft.addToBackStack("CoffeeSlt2Duration");
+                        ft.commit();
+                    } else if (c.sharedBundle.getInt("CheckedID") == 1)
+                    {   ft.replace(R.id.content_frame, new CoffeeEFFragment());
+                        ft.addToBackStack("CoffeeSlt2Duration");
+                        ft.commit();}
+
                 }
 
             }

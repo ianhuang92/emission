@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Batch Roaster with Thermal Oxidiser"
+            android:checked="true"
             android:id="@+id/ef1" />
 
         <RadioButton
