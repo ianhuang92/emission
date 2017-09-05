@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="monash.emission.account.RankResultFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:id="@+id/enterBeanTV"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView27"
+        android:layout_alignStart="@+id/textView27"
+        android:layout_marginTop="24dp"
+        android:id="@+id/otherRankTV"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Kg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView26"
+        android:layout_alignBaseline="@+id/etBean"
+        android:layout_alignBottom="@+id/etBean"
+        android:layout_toEndOf="@+id/etBean" />
+
+    <TextView
+        android:text="       "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView27"
+        android:layout_toEndOf="@+id/textView27"
+        android:layout_marginStart="11dp"
+        android:id="@+id/textView30"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:text="Get Rank!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getrankBTN"
+        android:textAllCaps="false"
+        android:layout_alignTop="@+id/etBean"
+        android:layout_alignEnd="@+id/textView27" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+
+        android:layout_marginTop="35dp"
+        android:id="@+id/etBean"
+        android:layout_width="100dp"
+        android:hint="amount"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="42dp"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/enterBeanTV" />
+
+    <TextView
+        android:text="Your relative emission ranking is: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/textView27"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:layout_below="@+id/getrankBTN"
+        android:layout_alignStart="@+id/etBean" />
+
+    <Button
+        android:text="Share the result to Facebook/Twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/button5"
+        android:textAllCaps="false"
+        android:enabled="false"
+        android:textStyle="normal|italic" />
+</RelativeLayout>

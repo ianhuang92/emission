@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="monash.emission.CoffeeRoastingFuncV2.CoffeeResultFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Estimation Result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:id="@+id/textView10"
+            android:textSize="24sp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textStyle="normal|italic" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultSO2"
+            android:layout_alignStart="@+id/resultSO2"
+            android:layout_marginTop="44dp"
+            android:id="@+id/recommandation"
+            android:textSize="18sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:id="@+id/resultSO2"
+            android:textSize="18sp"
+            android:layout_below="@+id/resultCO"
+            android:layout_alignStart="@+id/resultCO" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="57dp"
+            android:id="@+id/resultCO"
+            android:textSize="18sp"
+            android:layout_below="@+id/textView10"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+            android:id="@+id/dateText"
+            android:layout_below="@+id/textView10"
+            android:layout_alignStart="@+id/resultCO"
+            android:textSize="18sp" />
+
+        <Button
+            android:text="Calculate again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="65dp"
+            android:id="@+id/recalBTN" />
+
+        <Button
+            android:text="Record Data"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recordBtn"
+            android:layout_alignBaseline="@+id/recalBTN"
+            android:layout_alignBottom="@+id/recalBTN"
+            android:layout_toEndOf="@+id/recalBTN"
+            android:layout_marginStart="26dp" />
+
+    </RelativeLayout>
+</RelativeLayout>
