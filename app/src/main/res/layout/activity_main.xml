@@ -70,4 +70,5 @@
         android:layout_alignStart="@+id/estimatebtn"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
 </RelativeLayout>

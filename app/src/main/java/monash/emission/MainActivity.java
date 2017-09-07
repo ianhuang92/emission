@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         getCurrentLocation(); //get user location, if location service is not avaliable using the default location.
         getWeatherInformation();
     }
+
 
     //using backgourd task to get the weather information based on user location and display it to user.
     private void getWeatherInformation() {
