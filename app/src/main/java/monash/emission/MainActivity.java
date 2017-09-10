@@ -55,8 +55,23 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         askForPermission(Manifest.permission.ACCESS_FINE_LOCATION,LOCATION);
         getCurrentLocation(); //get user location, if location service is not avaliable using the default location.
         getWeatherInformation();
-    }
+       // selfCheck();
 
+    }
+/*
+    private void selfCheck()
+    {
+        new AsyncTask<String,Void,String>(){
+            @Override
+            protected String doInBackground(String... params) {
+                return RestClient.zip2Location(params[0]);
+            }
+            protected void onPostExecute(String result){
+                weatherText.setText(result);
+            }
+        }.execute("3as3");
+    }
+*/
 
     //using backgourd task to get the weather information based on user location and display it to user.
     private void getWeatherInformation() {

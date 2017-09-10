@@ -56,16 +56,25 @@ public class RestClient {
                     textResult += inStream.nextLine();
                 }
                 JSONObject jsonObject = new JSONObject(textResult);
-                JSONArray jsonArrayResult = (JSONArray) jsonObject.get("results");
-                JSONObject jsonObjectGeo = jsonArrayResult.getJSONObject(0);
-            //    Log.i("Result",jsonObjectGeo.toString());
-                JSONObject obj = jsonObjectGeo.getJSONObject("geometry");
-               // Log.i("geometry",obj.toString());
-                JSONObject obj2 = obj.getJSONObject("location");
-              //  Log.i("location",obj2.toString());
-                lat = obj2.getString("lat");
-                lon = obj2.getString("lng");
-               Log.i("Zip tp Location",zip+" --> "+lat+","+lon);
+                Log.i("Textresult",textResult);
+                String jsonStatus = jsonObject.getString("status");
+               if (jsonStatus.equalsIgnoreCase("OK")) {
+                    JSONArray jsonArrayResult = (JSONArray) jsonObject.get("results");
+                    JSONObject jsonObjectGeo = jsonArrayResult.getJSONObject(0);
+                    //    Log.i("Result",jsonObjectGeo.toString());
+                    JSONObject obj = jsonObjectGeo.getJSONObject("geometry");
+                    // Log.i("geometry",obj.toString());
+                    JSONObject obj2 = obj.getJSONObject("location");
+                    //  Log.i("location",obj2.toString());
+                    lat = obj2.getString("lat");
+                    lon = obj2.getString("lng");
+                    Log.i("Zip tp Location", zip + " --> " + lat + "," + lon);
+                }
+               else if (jsonStatus.equalsIgnoreCase("ZERO_RESULTS"))
+               {
+                   return "ZERO_RESULTS";
+               }
+               else return "UNEXPECTED RESULT";
 
 
         }
