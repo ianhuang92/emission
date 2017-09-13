@@ -5,22 +5,25 @@
     tools:context="monash.emission.CoffeeRoastingFuncV2.CoffeeResultFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp">
 
         <TextView
             android:text="Estimation Result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/textView10"
             android:textSize="24sp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textStyle="normal|italic" />
-
+            android:textStyle="normal|italic"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
         <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
@@ -29,6 +32,7 @@
             android:layout_alignStart="@+id/resultSO2"
             android:layout_marginTop="44dp"
             android:id="@+id/recommandation"
+            android:autoLink="web"
             android:textSize="18sp"
             android:textColor="@android:color/black" />
 
@@ -60,7 +64,7 @@
 
             android:layout_marginTop="12dp"
             android:id="@+id/dateText"
-            android:layout_below="@+id/textView10"
+            android:layout_below="@id/textView10"
             android:layout_alignStart="@+id/resultCO"
             android:textSize="18sp" />
 
@@ -70,6 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@id/recommandation"
+
             android:layout_marginStart="36dp"
             android:layout_marginBottom="65dp"
             android:id="@+id/recalBTN" />
@@ -80,10 +86,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/recordBtn"
-            android:layout_alignBaseline="@+id/recalBTN"
-            android:layout_alignBottom="@+id/recalBTN"
-            android:layout_toEndOf="@+id/recalBTN"
-            android:layout_marginStart="26dp" />
+            android:layout_marginStart="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/recalBTN" />
 
     </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>

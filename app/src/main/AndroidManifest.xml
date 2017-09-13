@@ -11,6 +11,19 @@
         android:label="Emission Tracker"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <resources>
+            <string android:name="com.twitter.sdk.android.CONSUMER_KEY">F838MexJj5YcBul4ERMCncQu9</string>
+            <string android:name="com.twitter.sdk.android.CONSUMER_SECRET">3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk</string>
+        </resources>
+        <receiver
+            android:name=".MyResultReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE"/>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.TWEET_COMPOSE_CANCEL"/>
+            </intent-filter>
+        </receiver>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

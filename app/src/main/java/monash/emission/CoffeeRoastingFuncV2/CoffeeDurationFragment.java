@@ -176,7 +176,7 @@ public class CoffeeDurationFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etStart.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
+                etStart.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
@@ -191,7 +191,7 @@ public class CoffeeDurationFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etEnd.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
+                etEnd.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();

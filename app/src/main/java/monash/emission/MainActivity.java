@@ -2,6 +2,7 @@ package monash.emission;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -11,11 +12,20 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterConfig;
 
 import monash.emission.CoffeeRoastingFuncV2.CoffeeRoastActivity;
 import monash.emission.account.AccountActivity;
@@ -26,13 +36,16 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     private String currentLat;
     private String currentLng;
     static final Integer LOCATION = 0x1;
+    ImageView recom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recom = (ImageView)findViewById(R.id.imageView2);
         Button manageBtn = (Button)findViewById(R.id.managebtn);
-
+        TwitterConfig config = new TwitterConfig.Builder(MainActivity.this).debug(true).twitterAuthConfig(new TwitterAuthConfig("F838MexJj5YcBul4ERMCncQu9", "3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk")).build();
+        Twitter.initialize(config);
         manageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +67,94 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         askForPermission(Manifest.permission.ACCESS_FINE_LOCATION,LOCATION);
         getCurrentLocation(); //get user location, if location service is not avaliable using the default location.
         getWeatherInformation();
+        Button zipbtn = (Button)findViewById(R.id.zipBTN);
+        zipbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater li = LayoutInflater.from(MainActivity.this);
+                View promptsView = li.inflate(R.layout.custom_dialog, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        MainActivity.this);
+
+                // set prompts.xml to alertdialog builder
+                alertDialogBuilder.setView(promptsView);
+
+                final EditText userInput = (EditText) promptsView
+                        .findViewById(R.id.editTextDialogUserInput);
+
+                // set dialog message
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        // get user input and set it to result
+                                        // edit text
+                                        //result.setText(userInput.getText());
+                                        weatherText.setText("Loading weather information....");
+                                        new AsyncTask<String,Void,String>(){
+
+                                            @Override
+                                            protected String doInBackground(String... params) {
+                                                return RestClient.zip2Location(params[0]);
+                                            }
+                                            @Override
+                                            protected void onPostExecute(String result){
+                                                if (result.length()==0){
+                                                    weatherText.setText("Zip code not valid");
+                                                }else if (result.equalsIgnoreCase("ZERO_RESULTS"))
+                                                {
+                                                    weatherText.setText("No result for that zip code");
+                                                }
+                                                else{
+                                                    new AsyncTask<String,Void,String>(){
+
+                                                        @Override
+                                                        protected String doInBackground(String... params) {
+                                                            return RestClient.getAirQuality(params[0],params[1]);
+                                                        }
+
+                                                        @Override
+                                                        protected void onPostExecute(String result){
+                                                            final String[] weatherInfo = result.split("@");
+
+                                                            //weatherText.setText("Air polution info PLACEHOLDER");
+                                                            weatherText.setText(weatherInfo[0] + "\n" + weatherInfo[1] + "\n"
+                                                                    + weatherInfo[2] + "\n" + weatherInfo[3] + "\n");
+                                                            recom.setOnClickListener(new View.OnClickListener() {
+                                                                @Override
+                                                                public void onClick(View v) {
+                                                                    new AlertDialog.Builder(MainActivity.this)
+                                                                            .setTitle(Html.fromHtml("<font color='#0000ff'>Recommendations</font>"))
+                                                                            .setMessage(weatherInfo[4])
+                                                                            .setIcon(android.R.drawable.btn_star_big_on)
+                                                                            .setPositiveButton("Ok",null).show();
+                                                                }
+                                                            });
+                                                        }
+
+                                                    }.execute(result.split(","));
+                                                }
+                                            }
+                                        }.execute(userInput.getText().toString());
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+
+            }
+        });
     }
 
     //using backgourd task to get the weather information based on user location and display it to user.
@@ -61,19 +162,29 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         new AsyncTask<String, Void, String>() {
             @Override
             protected String doInBackground(String... params) {
-                return RestClient.getWeatherInfo(params[0],params[1]);
+                return RestClient.getAirQuality(params[0],params[1]);
             }
             @Override
             protected void onPostExecute(String result){
                 if(result.length() == 0){
                     weatherText.setText("Can not get the weather information");
                 }else{
-                    String[] weatherInfo = result.split(",");
+                    final String[] weatherInfo = result.split("@");
 
-                    weatherText.setText("Air polution info PLACEHOLDER");
-                /*    weatherText.setText("Location: " + weatherInfo[0] + ", Weather: " + weatherInfo[1] + "\nTemperature: "
-                            + weatherInfo[2] + ", Humidity: " + weatherInfo[3] + "\n"  + "Wind speed: " + weatherInfo[4]);
-                */
+                    //weatherText.setText("Air polution info PLACEHOLDER");
+                   weatherText.setText(weatherInfo[0] + "\n" + weatherInfo[1] + "\n"
+                            + weatherInfo[2] + "\n" + weatherInfo[3] + "\n");
+                   recom.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           new AlertDialog.Builder(MainActivity.this)
+                                   .setTitle(Html.fromHtml("<font color='#0000ff'>Recommendations</font>"))
+                                   .setMessage(weatherInfo[4])
+                                   .setIcon(android.R.drawable.btn_star_big_on)
+                                   .setPositiveButton("Ok",null).show();
+                       }
+                   });
+
                 }
             }
         }.execute(currentLat,currentLng);

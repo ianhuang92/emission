@@ -2,12 +2,14 @@ package monash.emission.account;
 
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -55,6 +57,17 @@ public class UserHistoryFragment extends Fragment {
         expandableListDetail = new LinkedHashMap<String, List<String>>();
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         TextView intro = (TextView) vUH.findViewById(R.id.historytv);
+
+        Button chartBTN = (Button) vUH.findViewById(R.id.button3);
+        chartBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = u.fragmentManager.beginTransaction();
+                ft.replace(R.id.content_frame, new ChartFragment());
+                ft.addToBackStack("CoffeeSlt2Duration");
+                ft.commit();
+            }
+        });
         if (currentUser.getEmissionRecords().size()==0){
             intro.setText("No Emission Data");
         }else {

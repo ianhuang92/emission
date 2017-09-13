@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -24,22 +25,8 @@
         android:id="@+id/textView22" />
 
     <Button
-        android:text="Estimate My Emission"
-
-        android:layout_height="70dp"
-        android:layout_marginTop="73dp"
-        android:id="@+id/estimatebtn"
-        android:layout_below="@+id/weatherInfo"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp"
-        android:layout_width="250dp"
-        android:textAllCaps="false"
-        >
-    </Button>
-
-    <Button
         android:text="Manage My Emission"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/managebtn"
         android:layout_below="@+id/estimatebtn"
         android:layout_alignStart="@+id/estimatebtn"
@@ -63,6 +50,7 @@
         android:text="Loading weather information......"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:lines="5"
         android:layout_marginTop="33dp"
         android:id="@+id/weatherInfo"
         android:textSize="18sp"
@@ -70,4 +58,35 @@
         android:layout_alignStart="@+id/estimatebtn"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <Button
+        android:text="Estimate My Emission"
+
+        android:layout_height="70dp"
+        android:id="@+id/estimatebtn"
+        android:layout_marginTop="67dp"
+        android:textSize="18sp"
+        android:layout_width="250dp"
+        android:textAllCaps="false"
+        android:layout_below="@+id/weatherInfo"
+        android:layout_centerHorizontal="true">
+    </Button>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/qmk"
+        android:id="@+id/imageView2"
+        android:layout_marginEnd="23dp"
+        android:layout_below="@+id/weatherInfo"
+        android:layout_toStartOf="@+id/zipBTN" />
+
+    <Button
+        android:text="Another zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zipBTN"
+        android:layout_below="@+id/weatherInfo"
+        android:layout_alignEnd="@+id/estimatebtn" />
+
 </RelativeLayout>

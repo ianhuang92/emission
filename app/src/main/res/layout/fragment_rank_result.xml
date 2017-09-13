@@ -81,15 +81,13 @@
         android:layout_below="@+id/getrankBTN"
         android:layout_alignStart="@+id/etBean" />
 
-    <Button
-        android:text="Share the result to Facebook/Twitter"
+
+
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:id="@+id/button5"
-        android:textAllCaps="false"
-        android:enabled="false"
-        android:textStyle="normal|italic" />
+        android:layout_marginBottom="21dp" />
 </RelativeLayout>

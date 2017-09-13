@@ -97,7 +97,8 @@ public class CoffeeResultFragment extends Fragment {
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
                 COText.setTextColor(Color.GREEN);
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
-                recommandation.setText("You SO2 is over the threshold, you should lower you SO2 emission, recommendation is PLACEHOLDER. \n You CO is good, keep going");
+
+                recommandation.setText("You SO2 is over the threshold, you should lower you SO2 emission. \n You CO is good, keep going. Tips for you are: Try to be more energy efficient, for example you can change to some cleaner energy.");
                 new AlertDialog.Builder(getActivity())
                         .setTitle(Html.fromHtml("<font color='#FF0000'>Warning</font>"))
                         .setMessage("You SO2 level is " + resultSO2 + " ,which have exceed the threshold of 'SO2' (10000 tonnes per year)")
@@ -109,7 +110,8 @@ public class CoffeeResultFragment extends Fragment {
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
                 COText.setTextColor(Color.RED);
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
-                recommandation.setText("You CO is over the threshold, you should lower you SO2 emission, recommendation is PLACEHOLDER. \n You SO2 is good, keep going");
+                recommandation.setText("You CO is over the threshold, you should lower you SO2 emission. \n You SO2 is good, keep going. \n\nTips for you are: You can offset additional carbon emissions:\n" +
+                        "Directly through Australian government website (Users submit their carbon claim request to the government and wait for approval):https://goo.gl/F2pkc9\n");
                 new AlertDialog.Builder(getActivity())
                         .setTitle(Html.fromHtml("<font color='#FF0000'>Warning</font>"))
                         .setMessage("You CO level is " + resultCO + " ,which have exceed the threshold of 'CO' (10000 tonnes per year)")
@@ -121,7 +123,9 @@ public class CoffeeResultFragment extends Fragment {
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
                 COText.setTextColor(Color.RED);
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
-                recommandation.setText("Both SO2 and CO is over the threshold, you should lower you SO2 emission, recommendation is PLACEHOLDER. ");
+                recommandation.setText("Both SO2 and CO is over the threshold, you should lower you SO2 emission.\n\n Tips for you are :Switching coffee facility to solar panel\n" +
+                        "Or using wind energy to help account for electricity usage at the roasting\n" +
+                        "Or biomass\n. ");
                 new AlertDialog.Builder(getActivity())
                         .setTitle(Html.fromHtml("<font color='#FF0000'>Warning</font>"))
                         .setMessage("You SO2 level is " + resultSO2 + " ,which have exceed the threshold of 'SO2' (10000 tonnes per year) \n You CO level is " + resultCO + " ,which have exceed the threshold of 'CO' (10000 tonnes per year)")
@@ -133,7 +137,17 @@ public class CoffeeResultFragment extends Fragment {
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
                 COText.setTextColor(Color.GREEN);
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
-                recommandation.setText("Both SO2 and CO is good, all under the threshold, keep going. Tips PLACEHOLDER ");
+                if (resultCO < 500){
+                    recommandation.setText("Both SO2 and CO is good, all under the threshold, keep going.\n\n Tips for you are :switching to LED lights and turning the espresso machine off at night ");
+                }else if (resultCO >=500 && resultCO < 3000){
+                    recommandation.setText("Both SO2 and CO is good, all under the threshold, keep going.\n\n Tips for you is : If you import coffee beans from outside sources: Buying organic and fair-trade coffee beans from coffee-producing farms with sustainable agriculture practises\nSome recommendation website:\nhttp://www.mycuppa.com.au/\n" +
+                            "\nhttps://www.coffex.com.au/ ");
+                }else{
+                    recommandation.setText("Both SO2 and CO is good, all under the threshold, keep going. Tips for you are:Be more energy efficiency\n" +
+                            "Switching coffee facility to solar panel\n" +
+                            "Or using wind energy to help account for electricity usage at the roasting\n" +
+                            "Or biomass\n ");
+                }
 
             }
         }else if (type == 1){ //emission factor
@@ -171,9 +185,10 @@ public class CoffeeResultFragment extends Fragment {
                     output="Internal Error: Switch Case not found. See emissionFactor.java line 84";
             }
             SO2Text.setText(output);
-            recommandation.setText("Recommandation PLACEHOLDER");
+            recommandation.setText("Tips for you are: You can offset additional carbon emissions:\n" +
+                    "Directly through Australian government website (Users submit their carbon claim request to the government and wait for approval):https://goo.gl/F2pkc9\\n\");");
             if (CO > 10000){
-                recommandation.setText("Recommandation PLACEHOLDER");
+                recommandation.setText("Tips for you are: ");
                 new AlertDialog.Builder(getActivity())
                         .setTitle(Html.fromHtml("<font color='#FF0000'>Warning</font>"))
                         .setMessage("You emission level is " + CO + " ,which have exceed the threshold of '" + "Carbon Monoxide(CO)" + "' (10000 tonnes per year)")

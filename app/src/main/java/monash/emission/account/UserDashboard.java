@@ -13,6 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterConfig;
+
 import monash.emission.R;
 
 public class UserDashboard extends AppCompatActivity
@@ -31,6 +35,8 @@ public class UserDashboard extends AppCompatActivity
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TwitterConfig config = new TwitterConfig.Builder(UserDashboard.this).debug(true).twitterAuthConfig(new TwitterAuthConfig("F838MexJj5YcBul4ERMCncQu9", "3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk")).build();
+        Twitter.initialize(config);
         sharePreference = getSharedPreferences(myPreference, Context.MODE_PRIVATE);
         userBundle = getIntent().getBundleExtra("bundle");
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
