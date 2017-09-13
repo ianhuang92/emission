@@ -1,7 +1,9 @@
 package monash.emission.account;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -24,6 +26,7 @@ public class UserDashboard extends AppCompatActivity
 
     protected Bundle userBundle;
     protected FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,7 +2,10 @@ package monash.emission.account;
 
 
 import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +15,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.twitter.sdk.android.tweetcomposer.BuildConfig;
+import com.twitter.sdk.android.tweetcomposer.ComposerActivity;
+import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,9 +45,11 @@ public class RankResultFragment extends Fragment {
     View vRank;
     public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private UserDashboard u;
+    private Button but;
     private UserInfo currentUser;
     private ArrayList<SortingEntity> otherSO2;
     private ArrayList<SortingEntity> otherCO;
+    private TwitterLoginButton loginButton;
     TextView ranktv;
     TextView otherRank;
     public RankResultFragment() {
@@ -47,6 +63,28 @@ public class RankResultFragment extends Fragment {
         // Inflate the layout for this fragment
         vRank = inflater.inflate(R.layout.fragment_rank_result, container, false);
         u = (UserDashboard)getActivity();
+        but = (Button) u.findViewById(R.id.button_share2Twitter);
+        but.setEnabled(true);
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final TwitterSession session = TwitterCore.getInstance().getSessionManager()
+                        .getActiveSession();
+                if (session != null) {
+                    final Intent intent = new ComposerActivity.Builder(u)
+                            .session(session)
+                            .text("Love where you work")
+                            .hashtags("#twitter")
+                            .createIntent();
+                    startActivity(intent);
+                    Toast.makeText(getActivity(),"Post done", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(getActivity(),"Post Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         currentUser = new Gson().fromJson(u.userBundle.getString("userdata"),UserInfo.class);
         final EmissionRecord er = currentUser.getEmissionRecords().get(u.userBundle.getInt("rankselection"));
         TextView infoTV = (TextView)vRank.findViewById(R.id.enterBeanTV);
@@ -128,6 +166,18 @@ public class RankResultFragment extends Fragment {
             }
         });
         return vRank;
+    }
+
+    private void twitterAct()
+    {
+        Twitter.initialize(u);
+        Uri imageUri = FileProvider.getUriForFile(u,
+                BuildConfig.APPLICATION_ID + ".file_provider",
+                new File("t.png"));
+        TweetComposer.Builder builder = new TweetComposer.Builder(u)
+                .text("just setting up my Twitter Kit.")
+                .image(imageUri);
+        builder.show();
     }
 
     public void initializeOtherInfo(String substance){

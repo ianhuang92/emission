@@ -58,7 +58,13 @@
         android:layout_centerHorizontal="true"
         android:textStyle="normal|italic"
         android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/estimatebtn"
+        android:layout_centerHorizontal="true" />
     <TextView
         android:text="Loading weather information......"
         android:layout_width="wrap_content"

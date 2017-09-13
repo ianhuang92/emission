@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -82,14 +83,15 @@
         android:layout_alignStart="@+id/etBean" />
 
     <Button
-        android:text="Share the result to Facebook/Twitter"
+        android:text="Share the result to Twitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:id="@+id/button5"
+        android:id="@+id/button_share2Twitter"
         android:textAllCaps="false"
-        android:enabled="false"
+        android:enabled="true"
         android:textStyle="normal|italic" />
+
 </RelativeLayout>
