@@ -28,10 +28,11 @@ public class CoffeeRoastActivity extends AppCompatActivity {
         //Used Key -- Type -- Meaning
         //CheckedName -- String -- Name of methodology selected
         //CheckedID  -- int -- ID of radio button selected in group, starting from 0
-        //StartDate -- String -- start date selected, yyyy-MM-dd
-        //EndDate -- String -- end date selected, yyyy-MM-dd
+        //StartDate -- String -- start date selected, dd-MM-yyyy
+        //EndDate -- String -- end date selected, dd-MM-yyyy
         //Duration -- int --number of days between end date and start date.
         //AvgHour -- Double -- average running hour per day
+        //Mass  -- Double -- Mass of beans
 
 
         //fragment manager

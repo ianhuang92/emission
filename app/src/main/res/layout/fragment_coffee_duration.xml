@@ -88,6 +88,28 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tv_duration_mass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_avg_hr_fragment_coffee_duration"
+        android:text="\nTones of Green Coffee Beans Processed:\n"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/et_mass_fragment_coffee_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_duration_mass"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
+
 </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

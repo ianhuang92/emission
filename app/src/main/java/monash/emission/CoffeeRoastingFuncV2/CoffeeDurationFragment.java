@@ -32,16 +32,21 @@ public class CoffeeDurationFragment extends Fragment {
     private EditText etStart;
     private EditText etEnd;
     private EditText etAvgHr;
+    private EditText etMass;
     private Button butNext;
     private Date startDate;
     private Date endDate;
+    private Date currentDate;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //inflate converts an XML layout file into corresponding ViewGroups and views
+        Calendar calendar = Calendar.getInstance();
+        currentDate = calendar.getTime();
         vDisplayUnit = inflater.inflate(R.layout.fragment_coffee_duration, container, false);
         c = (CoffeeRoastActivity) getActivity();
         etStart = (EditText)vDisplayUnit.findViewById(R.id.et_start_fragment_coffee_duration);
         etEnd = (EditText)vDisplayUnit.findViewById(R.id.et_end_fragment_coffee_duration);
         etAvgHr = (EditText)vDisplayUnit.findViewById(R.id.et_avg_hr_fragment_coffee_duration) ;
+        etMass = (EditText)vDisplayUnit.findViewById(R.id.et_mass_fragment_coffee_duration);
         butNext = (Button)vDisplayUnit.findViewById(R.id.but_fragment_coffee_duration);
 
         etStart.setOnTouchListener(new View.OnTouchListener() {
@@ -113,7 +118,7 @@ public class CoffeeDurationFragment extends Fragment {
 
     private boolean collectData()
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {  //validate if start date has been selected
             startDate = sdf.parse(etStart.getText().toString());
         } catch (ParseException e) {
@@ -126,7 +131,18 @@ public class CoffeeDurationFragment extends Fragment {
             Toast.makeText(c,"Please enter End Date.",Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (etAvgHr.getText().toString().trim().isEmpty()) {  //validate if avg hour is empty
+        if (startDate.compareTo(currentDate)>=0)
+        {
+            Toast.makeText(c,"Please select a start date earlier than today.",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (endDate.compareTo(currentDate)>= 0)
+        {
+            Toast.makeText(c,"Please select an end date earlier than today.",Toast.LENGTH_SHORT).show();
+            return false;
+
+        }
+        else if (etAvgHr.getText().toString().trim().isEmpty()) {  //validate if avg hour is empty
             Toast.makeText(c,"Please enter Average Machine Running Hours.",Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -135,8 +151,13 @@ public class CoffeeDurationFragment extends Fragment {
             Toast.makeText(c,"Start Date must be before End date. ",Toast.LENGTH_SHORT).show();
             return false;
         }
+        else if(etMass.getText().toString().trim().isEmpty())
+        {
+            Toast.makeText(c,"Please enter Mass of Beans.",Toast.LENGTH_SHORT).show();
+            return false;
+        }
         Double avgHr;
-
+        Double mass;
        try {
            avgHr = Double.parseDouble(etAvgHr.getText().toString());
            if (avgHr>24)
@@ -155,6 +176,19 @@ public class CoffeeDurationFragment extends Fragment {
            Toast.makeText(c,"Null pointer exception. Please contact Vendor to report this bug.  ",Toast.LENGTH_SHORT).show();
            return false;
        }
+       try{
+           mass = Double.parseDouble(etMass.getText().toString());
+       }
+       catch (NumberFormatException e)
+       {
+           Toast.makeText(c,"Invalid Number Format. Please Contact Vendor to report this bug. ",Toast.LENGTH_SHORT).show();
+           return false;
+       }
+       catch (NullPointerException e)
+       {
+           Toast.makeText(c,"Null pointer exception. Please contact Vendor to report this bug.  ",Toast.LENGTH_SHORT).show();
+           return false;
+       }
 
         int duration = DateCalculation.getGapCount(startDate,endDate);
 
@@ -163,6 +197,7 @@ public class CoffeeDurationFragment extends Fragment {
         c.sharedBundle.putString("EndDate",etEnd.getText().toString());
         c.sharedBundle.putInt("Duration",duration);
         c.sharedBundle.putDouble("AvgHour",avgHr);
+        c.sharedBundle.putDouble("Mass",mass);
         return true;
     }
 
@@ -176,7 +211,7 @@ public class CoffeeDurationFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etStart.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                etStart.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
@@ -191,7 +226,7 @@ public class CoffeeDurationFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etEnd.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                etEnd.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
