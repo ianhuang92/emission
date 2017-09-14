@@ -124,11 +124,12 @@ public class AccountMainFragment extends Fragment {
                     if (etUserName.getText().equals("")||etPasswd.getText().equals("")){
                         Toast.makeText(getActivity(),"Username or password invalid",Toast.LENGTH_SHORT).show();
                     }else{
-                        if(sharePreference.getString(etUserName.getText().toString(),null) == null){
-                            newuser = new UserInfo(etUserName.getText().toString(),etPasswd.getText().toString(),"Coffee Roasting",new ArrayList<EmissionRecord>());
+                        if(sharePreference.getString(etUserName.getText().toString(),null) == null)
+                        {  //如果用户名不存在
+                            newuser = new UserInfo(etUserName.getText().toString(),etPasswd.getText().toString(),"Coffee Roasting",new ArrayList<EmissionRecord>()); //则创建新用户实例newuser
                             SharedPreferences.Editor editor = sharePreference.edit();
                             editor.putString(etUserName.getText().toString(),new Gson().toJson(newuser));
-                            editor.commit();
+                            editor.putString("CurrentUser",newuser.getUsername()).commit();//持久化用户实例，并设置CurrentUser为当前用户名
 
                             if (flag){
                                 final Dialog dialog = new Dialog(getActivity());
@@ -142,7 +143,6 @@ public class AccountMainFragment extends Fragment {
                                     public void onClick(View v) {
                                         newuser.setEmissionRecords((ArrayList<EmissionRecord>) new Gson().fromJson(sharePreference.getString("result",null),new TypeToken<ArrayList<EmissionRecord>>(){}.getType()));
                                         SharedPreferences.Editor editor = sharePreference.edit();
-                                        editor.remove(newuser.getUsername());
                                         editor.remove("useResult");
                                         editor.putString(newuser.getUsername(),new Gson().toJson(newuser));
                                         editor.commit();
@@ -154,6 +154,9 @@ public class AccountMainFragment extends Fragment {
 
                                 dialog.show();
                             }else{
+                                editor.remove("useResult");
+                                editor.putString(newuser.getUsername(),new Gson().toJson(newuser));
+
                                 c.userBundle.putString("userType","login");
                                 c.userBundle.putString("userdata",new Gson().toJson(newuser));
                                 Intent i = new Intent(getActivity(), UserDashboard.class);
@@ -170,12 +173,12 @@ public class AccountMainFragment extends Fragment {
 
                 }else if (mode == 1) {
                     //validate user info
-                    String info = sharePreference.getString(etUserName.getText().toString(),null);
+                    String info = sharePreference.getString(etUserName.getText().toString(),null); //尝试获取用户名对应json信息
                     if (info == null){
                         Toast.makeText(getActivity(),"User Not exist",Toast.LENGTH_SHORT).show();
                     }else {
                         final UserInfo user = new Gson().fromJson(info,UserInfo.class);
-                        if (user.getPassword().equals(etPasswd.getText().toString())){
+                        if (user.getPassword().equals(etPasswd.getText().toString())){  //密码验证通过
 
                             if (flag){
                                 final Dialog dialog = new Dialog(getActivity());
@@ -190,10 +193,9 @@ public class AccountMainFragment extends Fragment {
 
                                         user.addEmissionRecords((ArrayList<EmissionRecord>) new Gson().fromJson(sharePreference.getString("result",null),new TypeToken<ArrayList<EmissionRecord>>(){}.getType()));
                                         SharedPreferences.Editor editor = sharePreference.edit();
-                                        editor.remove(user.getUsername());
                                         editor.remove("useResult");
                                         editor.putString(user.getUsername(),new Gson().toJson(user));
-                                        editor.commit();
+                                        editor.putString("CurrentUser",user.getUsername()).commit();
                                         dialog.dismiss();
                                         Intent i = new Intent(getActivity(), CoffeeRoastActivity.class);
                                         startActivity(i);
@@ -206,7 +208,8 @@ public class AccountMainFragment extends Fragment {
                                 c.userBundle.putString("userdata",new Gson().toJson(user));
                                 Intent i = new Intent(getActivity(), UserDashboard.class);
                                 i.putExtra("bundle",c.userBundle);
-
+                                SharedPreferences.Editor editor = sharePreference.edit();
+                                editor.putString("CurrentUser",user.getUsername()).commit();
                                 startActivity(i);
 
                             }

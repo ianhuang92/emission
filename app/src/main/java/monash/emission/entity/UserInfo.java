@@ -1,6 +1,13 @@
 package monash.emission.entity;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Iterator;
 
 /**
  * Created by 80576 on 30/08/2017.
@@ -11,6 +18,37 @@ public class UserInfo {
     private String password;
     private String factoryType;
     private ArrayList<EmissionRecord> emissionRecords;
+
+    /*
+    按用户输入起始日期和终止日期筛选，对于筛选结果按照起始日期升序排序
+     */
+    public ArrayList<EmissionRecord> sortByDate(Date startDate,Date endDate)
+    {
+        ArrayList<EmissionRecord> tempList = new ArrayList<>();
+        Iterator iterator = emissionRecords.iterator();
+        while (iterator.hasNext())
+        {
+            EmissionRecord e = (EmissionRecord)iterator.next();
+           if (e.getStartDate().compareTo(startDate)>=0 && e.getEndDate().compareTo(endDate)<=0) //记录中起始日期大于等于用户输入日期 && 记录终止日期小于等于用户输入终止日期
+           {
+               tempList.add(e);
+           }
+        }
+        Log.i("Filter",tempList.size()+"");
+        Collections.sort(tempList,new dateComparator());
+        return tempList;
+    }
+/*
+        Comparator for sortByDate
+ */
+    private class dateComparator implements Comparator{
+        @Override
+        public int compare(Object o1, Object o2) {
+            EmissionRecord d1 = (EmissionRecord)o1;
+            EmissionRecord d2 = (EmissionRecord)o2;
+           return d1.getStartDate().compareTo(d2.getStartDate());
+        }
+    }
 
     public UserInfo(String username, String password, String factoryType, ArrayList<EmissionRecord> emissionRecords) {
         this.username = username;
