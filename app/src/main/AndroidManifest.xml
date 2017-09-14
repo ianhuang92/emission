@@ -16,7 +16,7 @@
             <string android:name="com.twitter.sdk.android.CONSUMER_SECRET">3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk</string>
         </resources>
         <receiver
-            android:name=".MyResultReceiver"
+            android:name=".entity.MyResultReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>

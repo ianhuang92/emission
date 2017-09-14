@@ -1,7 +1,9 @@
 package monash.emission.account;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -28,6 +30,19 @@ public class UserDashboard extends AppCompatActivity
 
     protected Bundle userBundle;
     protected FragmentManager fragmentManager;
+    //function for twitter（第一步） 照抄下面这个方法即可
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Pass the activity result to the fragment, which will then pass the result to the login
+        // button.
+        //TODO Twitter专用登录按钮如果在fragment内，启用下方代码寻找对应fragment
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
+        if (fragment != null) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+        }
+
+        // loginButton.onActivityResult(requestCode, resultCode, data);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +80,8 @@ public class UserDashboard extends AppCompatActivity
 
 
     }
+
+
 
     @Override
     public void onBackPressed() {

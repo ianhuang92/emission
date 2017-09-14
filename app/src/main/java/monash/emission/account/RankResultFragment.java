@@ -69,20 +69,12 @@ public class RankResultFragment extends Fragment {
             </intent-filter>
         </receiver>
      */
-
-    //function for twitter（第一步） 照抄下面这个方法即可
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // Pass the activity result to the fragment, which will then pass the result to the login
-        // button.
-        //TODO Twitter专用登录按钮如果在fragment内，启用下方代码寻找对应fragment
-        //Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
-        //if (fragment != null) {
-        //fragment.onActivityResult(requestCode, resultCode, data);
-        //}
-
         loginButton.onActivityResult(requestCode, resultCode, data);
     }
+
+
 
     //main function for twitter
     private void twitterFunction()
@@ -95,6 +87,7 @@ public class RankResultFragment extends Fragment {
         //初始化专用登录按钮
         loginButton = (TwitterLoginButton) vRank.findViewById(R.id.login_button);
         loginButton.setEnabled(true);
+        loginButton.setText("Post to Twitter!");
         //设置按钮的监听器
         loginButton.setCallback(new Callback<TwitterSession>() {
             @Override
@@ -136,6 +129,8 @@ public class RankResultFragment extends Fragment {
         // Inflate the layout for this fragment
         vRank = inflater.inflate(R.layout.fragment_rank_result, container, false);
         u = (UserDashboard)getActivity();
+        twitterFunction();
+
         currentUser = new Gson().fromJson(u.userBundle.getString("userdata"),UserInfo.class);
         final EmissionRecord er = currentUser.getEmissionRecords().get(u.userBundle.getInt("rankselection"));
         TextView infoTV = (TextView)vRank.findViewById(R.id.enterBeanTV);
