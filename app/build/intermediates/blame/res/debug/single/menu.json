@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\build\\intermediates\\res\\merged\\debug\\menu\\calculation.xml",
+        "source": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\src\\main\\res\\menu\\calculation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_user_dashboard_drawer.xml",
+        "source": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\src\\main\\res\\menu\\activity_user_dashboard_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\build\\intermediates\\res\\merged\\debug\\menu\\user_dashboard.xml",
+        "source": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\src\\main\\res\\menu\\user_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_calculation_drawer.xml",
+        "source": "C:\\Users\\Ranger\\Documents\\GitHub\\emission\\app\\src\\main\\res\\menu\\activity_calculation_drawer.xml"
+    }
+]

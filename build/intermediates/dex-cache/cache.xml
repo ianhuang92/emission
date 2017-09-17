@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.2\ccde00f7ccc77af5a6d5752e2cb21f6d8998289f\okhttp-3.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ccde00f7ccc77af5a6d5752e2cb21f6d8998289f">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\okhttp-3.4.2_e78d225472488976ff25fff38f12555e71ccd04c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_7fc2df769a8536f40ef5f26d22b2d008937ef878.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-interstitial\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b7433f0a43af98cb62a9b7ffc049d4e3a268c1f5">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-interstitial-4.11.0_88f462283ce16342562f0bdd35468462150e5d6b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-ui\3.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9df547a8c3f971d9e8ed570b5e36c44a9dc7632f">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-ui-3.1.1_a88855228c6cd50b33b5d602d1beb1fdbb9cbeef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_ea8f5a926031fc070aa5b668faab586f3131360e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_4aad5d7d5f142ecdf2c034c17874e77bfb896d31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.google.android.exoplayer\exoplayer\r1.5.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c046dc3c0911d142627192884ee771d9a6f5f34">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.google.android.exoplayer-exoplayer-r1.5.6_bb20c3f065f9d04a6ef5aea6bdb23a40e2a9e686.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_aab7f5d97edee9b1ccecd79a91dbd412afb71d74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.6_f3b8b1367520edb07b675e92d76ae54e43e2769e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_2d0cb3e58935cee74282a778a1620340217683b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-core\3.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="213a75f93fa2961a4c69566ef3c9a365c70a8693">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-core-3.1.1_445cd0c64505648f4f9db4c04820197cf3df70b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_cb8b65b9aa703a7671d50f26d1be71d0d456151d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-composer\3.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c6525f06e39d6c9e88d5b86ce6fe0351bc674a80">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-composer-3.1.1_328d86cde84274d45cefcd49e3a49b269c6afdfb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_6a7165221f55d035ec8d2fb06b947de551e034cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-native-static\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5abc448dbde53b0cd4cbe3c19d1e40c680667563">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-native-static-4.11.0_6cc52a9abf0a35650c27c0082e5eba7baad26b1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-base\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3cb69c8f121a1a08fb01b893e16507576b93eae8">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-base-4.11.0_e84d8ddc68b19b0cfd0a36ffea811d3dbb8b9d05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.2.6_d698b25ff7311e96b54818f7545fdfe3bd71a169.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-banner\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="431975800846a421d3b7ae1e5388b5bd87a5cfca">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-banner-4.11.0_8bdb3476bb62164554cbdc74b8b9089fb35d1a5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_3a13a203ce7015981f3e73849bf4811870437960.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_5e4e3af30bd7a0c792615c0f7e02f114b8f266bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="58d775ddb89146f1aaf31f5090ba9831069076e8">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-4.11.0_83290807f50905c3a4407d5d5058eb8b6933400b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-mopub\3.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="24d01029681c67ac64b0bc9ba7fd2c205374588e">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-mopub-3.1.1_fccf1df68e25e8675f872d9399a2d18d3261986c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_4031267ca94052ff3a892d9cae291d8268ed7717.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-rewardedvideo\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="92371d7303cc2411771e6d76bcd79119830e1fbf">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-rewardedvideo-4.11.0_01737aa744ca5f47212e421a90eaf38a07907c45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\okio-1.9.0_68f28807aae0c4746c28ffbc9c44385789bc726c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_5f6eb47696b7a946e65c9ae8dd02c75062c7fc73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.mopub.volley\mopub-volley\1.1.0\4357bce66ae3bb9be50679e43df122fd0a8f3394\mopub-volley-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4357bce66ae3bb9be50679e43df122fd0a8f3394">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\mopub-volley-1.1.0_3b50732b8c6a47da1e909f132f1dc98b358ddd97.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7979972576b6dbb1688052e42e5199abb54f81ba">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-10.2.6_4140418d472d4364fd02e249fde6ad663105f636.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_8d8f164cf1185180514a114b310b601e6ee17118.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_3b629b82360a323c1dee6f93b2a1104e1df4ee05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0c6924cbba8248329a8c58ead6a380efe7eee76e">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-10.2.6_e233837327a97f062144246d4fc48d2bc6ae2e0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_ca23ef0297a2e3370dad8ee70879d6bdba81246b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_8439ed74d95e14e7dcb681745e900ae66d2a9f8a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_1782a96ef7948680a25a44fd585bed5a1f6d40cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\gson-2.8.0_3fbc5cb8487ea07cb32510900adc47b331992bd6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_f077837d5c8df35b7beb33911270927f15d0e49a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.14.3\71218d7dd9435e8b43e5ccf117bec37cb78fa2eb\twitter-text-1.14.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="71218d7dd9435e8b43e5ccf117bec37cb78fa2eb">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\twitter-text-1.14.3_dd82b8cca511b32dff40dbbb40782d2170369850.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-native-video\4.11.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="af595815ceb3c9dea11f8a74d592a05ff4ead05f">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-native-video-4.11.0_7f6fd58a98c761d443d415f248d07865c1610d24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter\3.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93dbcb6695ede7eb2ac82aeb2e84eb0e8c8309d4">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-3.1.1_96551db90991a1c2f85de1c146c891bc953f05a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="C:\Users\Ranger\Documents\GitHub\emission\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.2.6_fa340129495b756f884b2a0ac074508381e57be4.jar" />
+    </item>
+
+</items>
