@@ -63,9 +63,9 @@ public class ChartFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etStart.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                etStart.setText(dayOfMonth + "-" + (monthOfYear+1) + "-" + year);
             }
-        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)-1, calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
     }
 
@@ -98,7 +98,9 @@ public class ChartFragment extends Fragment {
         //currentUser = new Gson().fromJson(sharePreference.getString(currentUser.getUsername(),null),UserInfo.class);
         etStart=(EditText)vChart.findViewById(R.id.et_startDate_chart);
         etEnd = (EditText)vChart.findViewById(R.id.et_endDate_chart);
-        etStart.setText(sdf.format(calendar.getTime()));
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -1);
+        etStart.setText(sdf.format(cal.getTime()));
         etEnd.setText(sdf.format(calendar.getTime()));  //default time as current time
         etStart.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -152,12 +154,14 @@ public class ChartFragment extends Fragment {
         mChart.setDrawGridBackground(true);
         mChart.getLegend().setEnabled(false);
         //set up the chart data source
+
         if (currentUser.getEmissionRecords().size() == 0){
             mChart.setNoDataText("You don't have any records to show");
         }else {
             mChart.setNoDataText("Press Run to launch Chart");
         }
-
+        if(validate()){
+        plot();}
             return vChart;
 
     }

@@ -19,6 +19,7 @@ import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterConfig;
 
+import monash.emission.CoffeeRoastingFuncV2.CoffeeRoastActivity;
 import monash.emission.MainActivity;
 import monash.emission.R;
 
@@ -51,18 +52,11 @@ public class UserDashboard extends AppCompatActivity
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         TwitterConfig config = new TwitterConfig.Builder(UserDashboard.this).debug(true).twitterAuthConfig(new TwitterAuthConfig("F838MexJj5YcBul4ERMCncQu9", "3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk")).build();
         Twitter.initialize(config);
         sharePreference = getSharedPreferences(myPreference, Context.MODE_PRIVATE);
         userBundle = getIntent().getBundleExtra("bundle");
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -74,10 +68,8 @@ public class UserDashboard extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
         fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new DashboardFragment()).commit();
-
 
     }
 
@@ -89,25 +81,18 @@ public class UserDashboard extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
-        }
-        int count = getFragmentManager().getBackStackEntryCount()+1;
-
-        if (count == 0) {
-            super.onBackPressed();
-            //additional code
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
-            finish();
-        } else {
-            getFragmentManager().popBackStack();
+         //   super.onBackPressed();
+            int count = fragmentManager.getBackStackEntryCount();
+            if(count > 0){
+                super.onBackPressed();
+            }
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.user_dashboard, menu);
+       // getMenuInflater().inflate(R.menu.user_dashboard, menu);
         return true;
     }
 
@@ -131,21 +116,35 @@ public class UserDashboard extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Fragment nextFragment = null;
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            nextFragment = new DashboardFragment();
         } else if (id == R.id.nav_gallery) {
-
+            nextFragment = new UserHistoryFragment();
         } else if (id == R.id.nav_slideshow) {
-
+            nextFragment = new RankFragment();
         } else if (id == R.id.nav_manage) {
-
+            Intent i = new Intent(getApplicationContext(),CoffeeRoastActivity.class);
+            i.putExtra("IndustryName","Coffee Roasting");
+            i.putExtra("entrance","fuel");
+            startActivity(i);
+            return true;
+        } else if (id == R.id.nav_gallery2) {
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+            return true;
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            SharedPreferences.Editor editor = sharePreference.edit();
+            editor.remove("CurrentUser");
+            editor.commit();
+            Intent i = new Intent(this,AccountActivity.class);
+            startActivity(i);
+            finish();
+            return true;
         }
-
+        fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame,
+                nextFragment).commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

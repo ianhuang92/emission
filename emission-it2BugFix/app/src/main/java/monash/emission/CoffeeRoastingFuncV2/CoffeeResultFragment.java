@@ -1,12 +1,14 @@
 package monash.emission.CoffeeRoastingFuncV2;
 
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
@@ -24,10 +26,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import monash.emission.R;
+import monash.emission.RestClient;
 import monash.emission.account.AccountActivity;
 import monash.emission.entity.CarbonMonoxide;
 import monash.emission.entity.EmissionRecord;
 import monash.emission.entity.SO2;
+import monash.emission.entity.UserInfo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -213,7 +217,63 @@ public class CoffeeResultFragment extends Fragment {
         record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sharePreference.getBoolean("alreadyLogin",false)){ //login
+                if (!sharePreference.getString("CurrentUser",null).equals("guest")){ //login
+                    final String username = sharePreference.getString("CurrentUser",null);
+
+                    try {
+                        EmissionRecord record = new EmissionRecord(""+Math.random(),"pollutant", "SO2", sdf.parse(startDate), sdf.parse(endDate), resultSO2,beans);
+                        EmissionRecord record2 = new EmissionRecord(""+Math.random(),"pollutant", "CO", sdf.parse(startDate), sdf.parse(endDate), resultCO,beans);
+                        record.setUsername(username);
+                        record2.setUsername(username);
+                        final ArrayList<EmissionRecord> ers = new ArrayList<EmissionRecord>();
+                        ers.add(record);
+                        ers.add(record2);
+
+
+                        final Dialog dialog = new Dialog(getActivity());
+                        dialog.setContentView(R.layout.dialog);
+                        dialog.setTitle("Data Saved");
+                        TextView detail = (TextView)dialog.findViewById(R.id.detailText);
+                        detail.setText(sharePreference.getString("prompt","ERROR in saving the data") + username);
+                        Button ok = (Button) dialog.findViewById(R.id.okBTN);
+                        ok.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                new AsyncTask<EmissionRecord, Void, String>() {
+                                    @Override
+                                    protected String doInBackground(EmissionRecord... params) {
+                                        return RestClient.createEmissionRecords(params[0],params[1]);
+                                    }
+
+                                    @Override
+                                    protected void onPostExecute(String result){
+                                        if (result.equals("")){
+                                            //System.out.println("OKk");
+                                            //SharedPreferences.Editor editor = sharePreference.edit();
+                                            //editor.remove("useResult");
+                                            //editor.putString(user.getUsername(),new Gson().toJson(user));
+                                            //c.userBundle.putString("userdata",new Gson().toJson(user));
+                                            //editor.putString("CurrentUser",user.getUsername()).commit();
+                                            dialog.dismiss();
+                                            Intent i = new Intent(getActivity(), CoffeeRoastActivity.class);
+                                            startActivity(i);//flag=false;
+                                        }
+                                    }
+                                }.execute(ers.get(0),ers.get(1));
+
+                                //user.addEmissionRecords((ArrayList<EmissionRecord>) new Gson().fromJson(sharePreference.getString("result",null),new TypeToken<ArrayList<EmissionRecord>>(){}.getType()));
+
+                            }
+                        });
+                        dialog.show();
+
+
+
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+
 
                 }else{ //not login
                     try {
@@ -222,9 +282,13 @@ public class CoffeeResultFragment extends Fragment {
                         ArrayList<EmissionRecord> er = new ArrayList<EmissionRecord>();
                         er.add(record);
                         er.add(record2);
+                        UserInfo u = new Gson().fromJson(sharePreference.getString("guest",null),UserInfo.class);
+                        u.addEmission(record);
+                        u.addEmission(record2);
                         SharedPreferences.Editor editor = sharePreference.edit();
                         editor.putString("result",new Gson().toJson(er));
                         editor.putBoolean("useResult",true);
+                        editor.putString("guest",new Gson().toJson(u));
                         editor.putString("prompt","From " + startDate + " to " + endDate + "\nFuel Type: " + c.sharedBundle.getString("fuel") + "\nSO2 level: " + resultSO2 + "\nCO level: " + resultCO + "\nUser:");
                         editor.commit();
                         Intent i = new Intent(getActivity(), AccountActivity.class);

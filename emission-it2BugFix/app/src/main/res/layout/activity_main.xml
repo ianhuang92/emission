@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Emission Tracker"
+        android:text="Air Quality Information "
         android:layout_alignParentEnd="true"
         android:layout_marginTop="15dp"
         android:layout_alignParentStart="true"
@@ -24,19 +24,8 @@
         android:textColor="@color/colorAccent"
         android:id="@+id/textView22" />
 
-    <Button
-        android:text="Manage My Emission"
-        android:layout_marginTop="20dp"
-        android:id="@+id/managebtn"
-        android:layout_below="@+id/estimatebtn"
-        android:layout_alignStart="@+id/estimatebtn"
-        android:layout_width="250dp"
-        android:layout_height="70dp"
-        android:textSize="18sp"
-        android:textAllCaps="false" />
-
     <TextView
-        android:text="Designed for Coffee Roasting Industry"
+        android:text="Based on your current location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView23"
@@ -46,47 +35,44 @@
         android:textStyle="normal|italic"
         android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
+    <Button
+        android:text="Another Post Code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zipBTN"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
+
     <TextView
-        android:text="Loading weather information......"
+        android:text="Loading air quality information......"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lines="5"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="36dp"
         android:id="@+id/weatherInfo"
         android:textSize="18sp"
-        android:layout_below="@+id/textView23"
-        android:layout_alignStart="@+id/estimatebtn"
         android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-    <Button
-        android:text="Estimate My Emission"
-
-        android:layout_height="70dp"
-        android:id="@+id/estimatebtn"
-        android:layout_marginTop="67dp"
-        android:textSize="18sp"
-        android:layout_width="250dp"
-        android:textAllCaps="false"
-        android:layout_below="@+id/weatherInfo"
-        android:layout_centerHorizontal="true">
-    </Button>
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:layout_below="@+id/textView23"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@drawable/qmk"
         android:id="@+id/imageView2"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/weatherInfo"
-        android:layout_toStartOf="@+id/zipBTN" />
+        android:layout_alignEnd="@+id/zipBTN" />
 
-    <Button
-        android:text="Another Post Code"
+    <TextView
+        android:text="Recommendations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/zipBTN"
-        android:layout_below="@+id/weatherInfo"
-        android:layout_alignEnd="@+id/estimatebtn" />
+        android:id="@+id/textView25"
+        android:layout_above="@+id/zipBTN"
+        android:layout_alignStart="@+id/zipBTN"
+        android:layout_marginBottom="11dp" />
 
 </RelativeLayout>

@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import monash.emission.MainActivity;
 import monash.emission.R;
 import monash.emission.account.AccountActivity;
 
@@ -48,7 +47,7 @@ private View vDisplayUnit;
         butHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(c.getApplicationContext(), MainActivity.class);
+                Intent i = new Intent(c.getApplicationContext(), AccountActivity.class);
                 startActivity(i);
             }
         });

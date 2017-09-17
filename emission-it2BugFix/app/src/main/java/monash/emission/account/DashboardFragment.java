@@ -4,6 +4,7 @@ package monash.emission.account;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import monash.emission.CoffeeRoastingFuncV2.CoffeeRoastActivity;
+import monash.emission.MainActivity;
 import monash.emission.R;
 import monash.emission.entity.UserInfo;
 
@@ -72,6 +75,26 @@ public class DashboardFragment extends Fragment {
                 ft.replace(R.id.content_frame, new RankFragment());
                 ft.addToBackStack("CoffeeSlt2Duration");
                 ft.commit();
+            }
+        });
+        ImageButton est = (ImageButton)vDb.findViewById(R.id.button2);
+        est.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),CoffeeRoastActivity.class);
+                i.putExtra("IndustryName","Coffee Roasting");
+                i.putExtra("entrance","fuel");
+                startActivity(i);
+            }
+        });
+
+        ImageButton air = (ImageButton) vDb.findViewById(R.id.button4);
+        air.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                startActivity(i);
+
             }
         });
         return vDb;

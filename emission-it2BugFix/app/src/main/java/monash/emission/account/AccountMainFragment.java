@@ -169,7 +169,7 @@ public class AccountMainFragment extends Fragment {
                                                         if (result.equals("")){
                                                             System.out.println("OKk");
                                                             SharedPreferences.Editor editor = sharePreference.edit();
-                                                            editor.remove("useResult");
+                                                            editor.putString("useResult",false);
                                                             //editor.putString(user.getUsername(),new Gson().toJson(user));
                                                             //c.userBundle.putString("userdata",new Gson().toJson(user));
                                                             editor.putString("CurrentUser",newUser.getUsername()).commit();
@@ -254,9 +254,9 @@ public class AccountMainFragment extends Fragment {
                                                                 //editor.putString(user.getUsername(),new Gson().toJson(user));
                                                                 //c.userBundle.putString("userdata",new Gson().toJson(user));
                                                                 editor.putString("CurrentUser",user.getUsername()).commit();
-                                                                dialog.dismiss();
+                                                                dialog.dismiss();flag=false;
                                                                 Intent i = new Intent(getActivity(), CoffeeRoastActivity.class);
-                                                                startActivity(i);flag=false;
+                                                                startActivity(i);
                                                             }
                                                         }
                                                     }.execute(ers.get(0),ers.get(1));
@@ -327,6 +327,7 @@ public class AccountMainFragment extends Fragment {
                                     SharedPreferences.Editor editor = sharePreference.edit();
                                     editor.remove(guest.getUsername());
                                     editor.remove("useResult");
+                                    editor.putString("CurrentUser","guest");
                                     editor.putString(guest.getUsername(),new Gson().toJson(guest));
                                     editor.commit();
                                     dialog.dismiss();
@@ -341,6 +342,7 @@ public class AccountMainFragment extends Fragment {
 
                             SharedPreferences.Editor editor = sharePreference.edit();
                             editor.putString("guest", new Gson().toJson(guest));
+                            editor.putString("CurrentUser","guest");
                             editor.commit();
                             c.userBundle.putString("userdata",new Gson().toJson(guest));
                             Intent i = new Intent (getActivity(), UserDashboard.class);
@@ -366,6 +368,7 @@ public class AccountMainFragment extends Fragment {
                                     editor.remove(guest.getUsername());
                                     editor.remove("useResult");
                                     editor.putString(guest.getUsername(),new Gson().toJson(guest));
+                                    editor.putString("CurrentUser","guest");
                                     editor.commit();
                                     dialog.dismiss();
                                     c.userBundle.putString("userdata",new Gson().toJson(guest));
@@ -377,7 +380,7 @@ public class AccountMainFragment extends Fragment {
                             dialog.show();
                         }else{
                             SharedPreferences.Editor editor = sharePreference.edit();
-                            editor.putString("guest", new Gson().toJson(guest));
+                            editor.putString("guest", new Gson().toJson(guest));editor.putString("CurrentUser","guest");
                             editor.commit();
                             c.userBundle.putString("userdata",new Gson().toJson(guest));
 

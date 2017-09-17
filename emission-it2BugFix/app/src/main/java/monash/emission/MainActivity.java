@@ -3,7 +3,6 @@ package monash.emission;
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -24,18 +23,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterConfig;
 
-import java.util.ArrayList;
-
-import monash.emission.CoffeeRoastingFuncV2.CoffeeRoastActivity;
-import monash.emission.account.AccountActivity;
-import monash.emission.account.UserDashboard;
-import monash.emission.entity.EmissionRecord;
 import monash.emission.entity.UserInfo;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
@@ -56,71 +47,71 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         sharePreference = getSharedPreferences(myPreference, Context.MODE_PRIVATE);
         setContentView(R.layout.activity_main);
         recom = (ImageView)findViewById(R.id.imageView2);
-        Button manageBtn = (Button)findViewById(R.id.managebtn);
+        //Button manageBtn = (Button)findViewById(R.id.managebtn);
         TwitterConfig config = new TwitterConfig.Builder(MainActivity.this).debug(true).twitterAuthConfig(new TwitterAuthConfig("F838MexJj5YcBul4ERMCncQu9", "3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk")).build();
         Twitter.initialize(config);
-        manageBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (sharePreference.getString("CurrentUser",null) == null){
-                    Intent i = new Intent(getApplicationContext(), AccountActivity.class);
-                    startActivity(i);
-                }else{
-
-
-                    //i.putExtra("cu",sharePreference.getString("CurrentUser",null));
-                    new AsyncTask<String, Void, String>() {
-                        @Override
-                        protected String doInBackground(String... params) {
-                            return RestClient.getUser(params[0]);
-                        }
-
-                        @Override
-                        protected void onPostExecute(String result)
-                        {
-                            if (result.length()!=0){
-                                currentUser = new Gson().fromJson(result,UserInfo.class);
-                                new AsyncTask<String, Void, String>() {
-                                    @Override
-                                    protected String doInBackground(String... params) {
-                                        return RestClient.getEmissionRecords(params[0]);
-                                    }
-
-                                    @Override
-                                    protected void onPostExecute(String result){
-                                        if (result.length()!=0){
-                                            ArrayList<EmissionRecord> er = new Gson().fromJson(result,new TypeToken<ArrayList<EmissionRecord>>(){}.getType());
-                                            currentUser.setEmissionRecords(er);
-                                            Intent i = new Intent(getApplicationContext(), UserDashboard.class);
-                                            Bundle userBundle = new Bundle();
-                                            userBundle.putString("userdata",new Gson().toJson(currentUser));
-                                            userBundle.putString("userType","login");
-                                            //Intent i = new Intent(getActivity(), UserDashboard.class);
-                                            i.putExtra("bundle",userBundle);
-                                            startActivity(i);
-                                            //welcomeTv.setText("Welcome " + currentUser.getUsername());
-                                        }
-                                    }
-                                }.execute(currentUser.getUsername());
-                            }
-                        }
-                    }.execute(sharePreference.getString("CurrentUser",null));
-
-
-                }
-
-            }
-        });
-        Button estimateBtn = (Button) findViewById(R.id.estimatebtn); //for iteration1 , the manage button wont reply
-        estimateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),CoffeeRoastActivity.class);
-                i.putExtra("IndustryName","Coffee Roasting");
-                i.putExtra("entrance","fuel");
-                startActivity(i);
-            }
-        });
+//        manageBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (sharePreference.getString("CurrentUser",null) == null){
+//                    Intent i = new Intent(getApplicationContext(), AccountActivity.class);
+//                    startActivity(i);
+//                }else{
+//
+//
+//                    //i.putExtra("cu",sharePreference.getString("CurrentUser",null));
+//                    new AsyncTask<String, Void, String>() {
+//                        @Override
+//                        protected String doInBackground(String... params) {
+//                            return RestClient.getUser(params[0]);
+//                        }
+//
+//                        @Override
+//                        protected void onPostExecute(String result)
+//                        {
+//                            if (result.length()!=0){
+//                                currentUser = new Gson().fromJson(result,UserInfo.class);
+//                                new AsyncTask<String, Void, String>() {
+//                                    @Override
+//                                    protected String doInBackground(String... params) {
+//                                        return RestClient.getEmissionRecords(params[0]);
+//                                    }
+//
+//                                    @Override
+//                                    protected void onPostExecute(String result){
+//                                        if (result.length()!=0){
+//                                            ArrayList<EmissionRecord> er = new Gson().fromJson(result,new TypeToken<ArrayList<EmissionRecord>>(){}.getType());
+//                                            currentUser.setEmissionRecords(er);
+//                                            Intent i = new Intent(getApplicationContext(), UserDashboard.class);
+//                                            Bundle userBundle = new Bundle();
+//                                            userBundle.putString("userdata",new Gson().toJson(currentUser));
+//                                            userBundle.putString("userType","login");
+//                                            //Intent i = new Intent(getActivity(), UserDashboard.class);
+//                                            i.putExtra("bundle",userBundle);
+//                                            startActivity(i);
+//                                            //welcomeTv.setText("Welcome " + currentUser.getUsername());
+//                                        }
+//                                    }
+//                                }.execute(currentUser.getUsername());
+//                            }
+//                        }
+//                    }.execute(sharePreference.getString("CurrentUser",null));
+//
+//
+//                }
+//
+//            }
+//        });
+//        Button estimateBtn = (Button) findViewById(R.id.estimatebtn); //for iteration1 , the manage button wont reply
+//        estimateBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getApplicationContext(),CoffeeRoastActivity.class);
+//                i.putExtra("IndustryName","Coffee Roasting");
+//                i.putExtra("entrance","fuel");
+//                startActivity(i);
+//            }
+//        });
         weatherText = (TextView)findViewById(R.id.weatherInfo);
         askForPermission(Manifest.permission.ACCESS_FINE_LOCATION,LOCATION);
         getCurrentLocation(); //get user location, if location service is not avaliable using the default location.
