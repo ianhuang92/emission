@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mopub-sdk-banner-4.11.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.mopub/mopub-sdk-banner/4.11.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.mopub/mopub-sdk-banner/4.11.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mopub/mopub-sdk-banner/4.11.0/b4d2a3d00c0c7646dd28a3690ee6f4200d44a461/mopub-sdk-banner-4.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
