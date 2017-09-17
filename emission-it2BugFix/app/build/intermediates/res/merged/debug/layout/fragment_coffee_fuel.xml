@@ -1,0 +1,146 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="monash.emission.CoffeeRoastingFuncV2.CoffeeFuelFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Choose a fuel used"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textView7"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textAlignment="center" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:checkedButton="@+id/radioButton"
+        android:id="@+id/fuelRadio"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/textView7"
+        android:layout_alignStart="@+id/textView8">
+
+
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/gasoline"
+                android:text="Gasoline "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="18sp" />
+
+
+        <RadioButton
+                android:layout_marginTop="43dp"
+                android:id="@+id/ff"
+                android:text="Fossil fuel"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:textSize="18sp" />
+
+        <RadioButton
+                android:layout_marginTop="35dp"
+                android:id="@+id/diesel"
+                android:text="Diesel   "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:textSize="18sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:text="Total Fuel Usage: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="118dp"
+        android:id="@+id/textView8"
+        android:textSize="18sp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:layout_marginStart="39dp"
+        android:layout_below="@+id/fuelRadio"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/fuelRadio"
+        android:layout_toEndOf="@+id/textView8"
+        android:layout_marginTop="105dp"
+        android:id="@+id/fuelUsageInput"
+        android:layout_width="100dp"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:text="Litre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_toEndOf="@+id/fuelUsageInput"
+        android:layout_marginStart="15dp"
+        android:id="@+id/textView9"
+        android:textSize="18sp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <Button
+        android:text="Calculate Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fuelUsageInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/calculateBtn"
+        android:textAllCaps="false"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/gasoline"
+        android:id="@+id/imageView4"
+        android:layout_alignTop="@+id/fuelRadio"
+        android:layout_alignEnd="@+id/calculateBtn" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ff"
+        android:visibility="gone"
+        android:id="@+id/imageView5"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/diesel"
+        android:id="@+id/imageView3"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignStart="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:srcCompat="@drawable/qmk"
+        android:id="@+id/helpIcon"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_alignStart="@+id/textView9" />
+
+</RelativeLayout>
+</FrameLayout>

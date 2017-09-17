@@ -214,6 +214,7 @@ public class ChartFragment extends Fragment {
         x.setPosition(XAxis.XAxisPosition.BOTTOM);
         x.setLabelRotationAngle(45f);
         mChart.getXAxis().setTextSize(16);
+        mChart.getXAxis().set
         // barData.setBarWidth(1f);
         mChart.setData(barData);
         // mChart.setFitBars(true);

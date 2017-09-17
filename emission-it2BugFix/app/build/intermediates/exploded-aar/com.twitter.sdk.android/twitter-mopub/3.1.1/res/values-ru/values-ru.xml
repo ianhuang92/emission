@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tw__privacy_icon_content_desc">Значок конфиденциальности</string>
+    <string name="tw__sponsored">Это рекламное объявление</string>
+</resources>
