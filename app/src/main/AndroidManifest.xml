@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="monash.emission">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/start"
+        android:label="Emission Tracker"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <resources>
+            <string android:name="com.twitter.sdk.android.CONSUMER_KEY">F838MexJj5YcBul4ERMCncQu9
+            </string>
+            <string android:name="com.twitter.sdk.android.CONSUMER_SECRET">
+                3O1kC3U3rvqpNmHvtwIssFlmHLCjnpOn5HFZFkENBNTJV0XYkk
+            </string>
+        </resources>
+
+        <receiver
+            android:name=".entity.MyResultReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS" />
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE" />
+                <action android:name="com.twitter.sdk.android.tweetcomposer.TWEET_COMPOSE_CANCEL" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".IndustrySectorActivity" />
+        <activity android:name=".CoffeeRoastingFuncV2.CoffeeRoastActivity" />
+        <activity
+            android:name=".CalculationActivity"
+            android:label="@string/title_activity_calculation"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".account.UserDashboard"
+            android:label="Emission Tracker"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".account.AccountActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
