@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tw__ad_cta_default">#1B95E0</color>
+    <color name="tw__ad_dark_card_bg_color">#292F33</color>
+    <color name="tw__ad_dark_card_border_color">#8899A6</color>
+    <color name="tw__ad_dark_container_bg_color">#000000</color>
+    <color name="tw__ad_dark_text_primary_color">#F5F8FA</color>
+    <color name="tw__ad_light_card_bg_color">@android:color/white</color>
+    <color name="tw__ad_light_card_border_color">#E1E8ED</color>
+    <color name="tw__ad_light_container_bg_color">#F5F8FA</color>
+    <color name="tw__ad_light_text_primary_color">#292F33</color>
+    <declare-styleable name="tw__native_ad"><attr format="color" name="tw__ad_container_bg_color"/><attr format="color" name="tw__ad_card_bg_color"/><attr format="color" name="tw__ad_text_primary_color"/><attr format="color" name="tw__ad_cta_button_color"/></declare-styleable>
+    <dimen name="tw__ad_icon_margin_left">2dp</dimen>
+    <dimen name="tw__ad_icon_margin_right">2dp</dimen>
+    <dimen name="tw__ad_icon_size">40dp</dimen>
+    <dimen name="tw__ad_layout_padding">14dp</dimen>
+    <dimen name="tw__ad_layout_padding_bottom">0dp</dimen>
+    <dimen name="tw__ad_privacy_icon_padding">10dp</dimen>
+    <dimen name="tw__ad_privacy_icon_size">40dp</dimen>
+    <dimen name="tw__ad_privacy_margin_left">-10dp</dimen>
+    <dimen name="tw__ad_privacy_text_margin_left">-5dp</dimen>
+    <dimen name="tw__ad_space_padding">12dp</dimen>
+    <dimen name="tw__ad_text_size_large">16sp</dimen>
+    <dimen name="tw__ad_text_size_medium">14sp</dimen>
+    <dimen name="tw__ad_text_size_small">12sp</dimen>
+    <dimen name="tw__ad_title_margin_left">8dp</dimen>
+    <dimen name="tw__ad_view_radius">5dp</dimen>
+    <string name="tw__privacy_icon_content_desc">Privacy Icon</string>
+    <string name="tw__sponsored">This is a sponsored ad</string>
+    <style name="tw__ad_DarkStyle" parent="tw_ad_BaseStyle">
+        <item name="tw__ad_container_bg_color">@color/tw__ad_dark_container_bg_color</item>
+        <item name="tw__ad_card_bg_color">@color/tw__ad_dark_card_bg_color</item>
+        <item name="tw__ad_text_primary_color">@color/tw__ad_dark_text_primary_color</item>
+    </style>
+    <style name="tw__ad_LightStyle" parent="tw_ad_BaseStyle">
+        <item name="tw__ad_container_bg_color">@color/tw__ad_light_container_bg_color</item>
+        <item name="tw__ad_card_bg_color">@color/tw__ad_light_card_bg_color</item>
+        <item name="tw__ad_text_primary_color">@color/tw__ad_light_text_primary_color</item>
+    </style>
+    <style name="tw__ad_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">@dimen/tw__ad_layout_padding</item>
+        <item name="android:paddingLeft">@dimen/tw__ad_layout_padding</item>
+        <item name="android:paddingRight">@dimen/tw__ad_layout_padding</item>
+        <item name="android:paddingBottom">@dimen/tw__ad_layout_padding_bottom</item>
+    </style>
+    <style name="tw__ad_cta_button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/tw__ad_text_size_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="tw_ad_BaseStyle">
+        <item name="tw__ad_cta_button_color">@color/tw__ad_cta_default</item>
+    </style>
+</resources>

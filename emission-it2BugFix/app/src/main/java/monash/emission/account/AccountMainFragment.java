@@ -169,7 +169,7 @@ public class AccountMainFragment extends Fragment {
                                                         if (result.equals("")){
                                                             System.out.println("OKk");
                                                             SharedPreferences.Editor editor = sharePreference.edit();
-                                                            editor.putString("useResult",false);
+                                                            editor.remove("useResult");
                                                             //editor.putString(user.getUsername(),new Gson().toJson(user));
                                                             //c.userBundle.putString("userdata",new Gson().toJson(user));
                                                             editor.putString("CurrentUser",newUser.getUsername()).commit();

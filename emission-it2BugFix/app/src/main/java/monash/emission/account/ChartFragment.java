@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
 
@@ -27,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import monash.emission.R;
 import monash.emission.entity.EmissionRecord;
@@ -63,7 +66,7 @@ public class ChartFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etStart.setText(dayOfMonth + "-" + (monthOfYear+1) + "-" + year);
+                etStart.setText(String.format("%02d",dayOfMonth) + "-" + String.format("%02d",monthOfYear + 1) + "-" + year);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)-1, calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
@@ -78,7 +81,7 @@ public class ChartFragment extends Fragment {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                etEnd.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                etEnd.setText(String.format("%02d",dayOfMonth)  + "-" + String.format("%02d",monthOfYear + 1) + "-" + year);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
@@ -149,10 +152,9 @@ public class ChartFragment extends Fragment {
 
 
         mChart = (BarChart) vChart.findViewById(R.id.barChart);
-        mChart.getDescription().setEnabled(false);
         //  mChart.setDrawBarShadow(true);
         mChart.setDrawGridBackground(true);
-        mChart.getLegend().setEnabled(false);
+        mChart.getLegend().setEnabled(true);
         //set up the chart data source
 
         if (currentUser.getEmissionRecords().size() == 0){
@@ -194,25 +196,50 @@ public class ChartFragment extends Fragment {
     //CALL this method ONLY when you passed validation method above
     private void plot()
     {
+        SimpleDateFormat mSdf = new SimpleDateFormat("dd.MM");
 
-        final ArrayList<String> labels = new ArrayList<>();
-        ArrayList<BarEntry> entry = new ArrayList<BarEntry>();
-        float x_index = 0;
+        ArrayList<String> labels = new ArrayList<>();
+       // List<String> xVals = new ArrayList<String>();
+        ArrayList<BarEntry> entryC = new ArrayList<BarEntry>();
+        ArrayList<BarEntry> entryS = new ArrayList<BarEntry>();
+        int x_indexC = 0;
+        int x_indexS = 0;
         ArrayList<EmissionRecord> tempList = currentUser.sortByDate(dateStart,dateEnd);
 
         for (EmissionRecord emissionRecord: tempList){
-            entry.add(new BarEntry(x_index,(float) emissionRecord.getLevel()));
-            labels.add(sdf.format(emissionRecord.getStartdate()) + " to " + sdf.format(emissionRecord.getEnddate()));
-            x_index += 1;
-        }
-        BarDataSet barDataSet = new BarDataSet(entry,"");
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+            if (emissionRecord.getName().equalsIgnoreCase("CO")) {  /*CO*/
+                //Log.i("Type-> CO",emissionRecord.getName());
+                entryC.add(new BarEntry((float) emissionRecord.getLevel(),x_indexC));
+                labels.add(mSdf.format(emissionRecord.getStartdate()) + " to " + mSdf.format(emissionRecord.getEnddate()));
+                x_indexC += 1;
+            } else /*SO2*/
+            {
+               // Log.i("Type-> SO2",emissionRecord.getName());
+                entryS.add(new BarEntry((float) emissionRecord.getLevel(),x_indexS));
+                //labelsS.add(mSdf.format(emissionRecord.getStartdate()) + " to " + mSdf.format(emissionRecord.getEnddate()));
+                x_indexS += 1;
+            }
+            //xVals.add(emissionRecord.getType());
 
-        BarData barData = new BarData(barDataSet);
+        }
+        BarDataSet barDataSetC = new BarDataSet(entryC,"CO");
+        BarDataSet barDataSetS = new BarDataSet(entryS,"SO2");
+        Log.i("-----","-------------------");
+        Log.i("CO",entryC.size()+"");
+        Log.i("SO2",entryS.size()+"");
+        Log.i("SO2_index",x_indexS+"");
+        Log.i("CO_index",x_indexC+"");
+        Log.i("labels",labels.size()+"");
+        barDataSetC.setColors(ColorTemplate.LIBERTY_COLORS);
+        barDataSetS.setColors(ColorTemplate.COLORFUL_COLORS);
+        List<IBarDataSet> barDataSets = new ArrayList<>();
+        barDataSets.add(barDataSetC);
+        barDataSets.add(barDataSetS);
+        BarData barData=new BarData(labels,barDataSets);
         barData.setDrawValues(true);
         barData.setValueTextSize(24);
         XAxis x = mChart.getXAxis();
-        x.setGranularity(1f);
+       // x.setGranularity(1f);
         //x.setValueFormatter(formater);
         //x.setSpaceMax(15);
         x.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -222,5 +249,12 @@ public class ChartFragment extends Fragment {
         mChart.setData(barData);
         // mChart.setFitBars(true);
         mChart.animateY(3000);
+        mChart.setScrollContainer(true);
+        mChart.setDragEnabled(true);
+        mChart.setDragDecelerationEnabled(true);
+        mChart.setTouchEnabled(true);
+        mChart.setPinchZoom(true);
+       // mChart.zoom(1,1,0,0);
+
     }
 }
