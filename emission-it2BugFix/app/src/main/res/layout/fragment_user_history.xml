@@ -6,18 +6,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:id="@+id/historytv"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textAllCaps="false"
-        android:textAlignment="center" />
-
     <ExpandableListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,15 +15,28 @@
         android:layout_marginTop="45dp"
         android:id="@+id/emissionlv" />
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/historytv"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:text="Visualization in Chart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="32dp"
         android:id="@+id/button3"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        android:backgroundTint="@android:color/holo_blue_bright" />
 
 </RelativeLayout>

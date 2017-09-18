@@ -13,6 +13,8 @@
         android:text="\nPlease select one methodology to estimate emission\n"
         android:textAlignment="center"
         android:textSize="18sp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:textStyle="normal|bold" />
 <RelativeLayout
     android:layout_width="match_parent"
@@ -20,6 +22,7 @@
     android:layout_height="wrap_content">
     <RadioGroup android:id="@+id/frag_coffee_calMethod"
         android:layout_height="wrap_content"
+
         android:layout_width="wrap_content"
         android:layout_marginLeft="46dp"
 >

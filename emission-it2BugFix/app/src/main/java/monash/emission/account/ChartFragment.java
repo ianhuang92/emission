@@ -211,8 +211,10 @@ public class ChartFragment extends Fragment {
         BarData barData = new BarData(barDataSet);
         barData.setDrawValues(true);
         barData.setValueTextSize(24);
+
         XAxis x = mChart.getXAxis();
         x.setGranularity(1f);
+        
         //x.setValueFormatter(formater);
         //x.setSpaceMax(15);
         x.setPosition(XAxis.XAxisPosition.BOTTOM);
