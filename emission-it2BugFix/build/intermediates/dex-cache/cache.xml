@@ -2,6 +2,7 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Users\Ranger\Documents\GitHub\emission\emission-it2BugFix\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-banner\4.11.0\jars\classes.jar"
         jumboMode="false"
@@ -243,6 +244,249 @@
         revision="25.0.3"
         sha1="7979972576b6dbb1688052e42e5199abb54f81ba">
         <dex dex="C:\Users\Ranger\Documents\GitHub\emission\emission-it2BugFix\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-10.2.6_425f9285ae5776e4f4c2fec123d02956ec052479.jar" />
+=======
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-banner\4.11.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="431975800846a421d3b7ae1e5388b5bd87a5cfca">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mopub-mopub-sdk-banner-4.11.0_c2516aba38e09e52da67696273aa579895b26e31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.3.1_964ffed54442fba3dc266b7be5c0cab35f675f23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_f4ea49b579fc7b6aa03629928d53e9229ce1d28d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.14.3\71218d7dd9435e8b43e5ccf117bec37cb78fa2eb\twitter-text-1.14.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="71218d7dd9435e8b43e5ccf117bec37cb78fa2eb">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\twitter-text-1.14.3_af78b84c86d91d9aa1ec13fe1e503c6e099f14d6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.3.1_1ac27b889a05f11d69c4600487d1c7ce978f69fa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-composer\3.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c6525f06e39d6c9e88d5b86ce6fe0351bc674a80">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.twitter.sdk.android-tweet-composer-3.1.1_83f2e2eaed609e4954d3dc7863f1107230905680\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-ui\3.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9df547a8c3f971d9e8ed570b5e36c44a9dc7632f">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.twitter.sdk.android-tweet-ui-3.1.1_356d5222414affccacd2c74a050b90474a20a59f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\MPAndroidChart-v3.0.1_57c613cdba4ae7cda76a8d2be7012f30bead4516\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.2.6_47a67eba8ebd07e50297459ca5092d152400aa4c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-native-video\4.11.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="af595815ceb3c9dea11f8a74d592a05ff4ead05f">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mopub-mopub-sdk-native-video-4.11.0_fdd1a3cf2d7f64cc773471d0781d4cf75885beca\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_bfd7cb4b4cd92465d267c224efd4feab91a8b6f3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.3.1_0388aba7b74bacd592078ef01dc66b2230e50d12\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.3.1_02f9c0be300d3acf51dfd64c9ea06f3f66d7bc41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.2.6_d0aad514db87071d52710ff9fdc03295f9aef282\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.mopub.volley\mopub-volley\1.1.0\4357bce66ae3bb9be50679e43df122fd0a8f3394\mopub-volley-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4357bce66ae3bb9be50679e43df122fd0a8f3394">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\mopub-volley-1.1.0_e0283b85f13e3c6c24ada0fe4abb893562cdab6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="129d600158ec84093098ece43eaba18986b72c51">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d57203056cc1afac4172d75d48925e092b86f791\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\ian\JDK\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_bc4ef6d97e497096842bd84e3db3e6a6ba835700\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.3.1_f6fadb04547473274540d8f4873a8563384a0202\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_a4c10ce17d6bfc46bbe68e3faaf082273ab05d68\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.2\ccde00f7ccc77af5a6d5752e2cb21f6d8998289f\okhttp-3.4.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ccde00f7ccc77af5a6d5752e2cb21f6d8998289f">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.2_f811c86d300143707a33d2bc44e7c8f56afb1ebd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter\3.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93dbcb6695ede7eb2ac82aeb2e84eb0e8c8309d4">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.twitter.sdk.android-twitter-3.1.1_939324d62680216a919f78d33a816c3850bc9265\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk\4.11.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="58d775ddb89146f1aaf31f5090ba9831069076e8">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mopub-mopub-sdk-4.11.0_da4553667d708dfd3183457148207cfd3b2e0a4b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.3.1_0f9e80f046e02373d84678b1a2ee7a9034d17458\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.3.1_f7494c2f7ee490c8beed445ee2d16d46d38d989f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.3.1_e87ddfbde6c4cb01693dfa86a1d3e6db3159eb41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7979972576b6dbb1688052e42e5199abb54f81ba">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.2.6_af1b31310288dcfb5e5ed3782eab40860d312345\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="85daa0d4f785f1a49f349aa2b32b06f39d58ceb1">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c36bacf3b1687573041a16d4483f1e39d8054e4d\classes.dex" />
+>>>>>>> origin/it33
     </item>
     <item
         is-multidex="false"
@@ -308,9 +552,24 @@
         <dex dex="C:\Users\Ranger\Documents\GitHub\emission\emission-it2BugFix\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_19f6a6d8325d0412286736d998e126127a6f0b83.jar" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Users\Ranger\Documents\GitHub\emission\emission-it2BugFix\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-mopub\3.1.1\jars\classes.jar"
         jumboMode="false"
+=======
+        is-multidex="true"
+        jar="C:\Users\80576\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.1.0_9b43fda017dff4e0066c718975a52014d202f797\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-core\3.1.1\jars\classes.jar"
+        jumboMode="true"
+>>>>>>> origin/it33
         optimize="true"
         revision="25.0.3"
         sha1="24d01029681c67ac64b0bc9ba7fd2c205374588e">
@@ -344,9 +603,24 @@
         <dex dex="C:\Users\Ranger\Documents\GitHub\emission\emission-it2BugFix\app\build\intermediates\pre-dexed\debug\com.mopub-mopub-sdk-interstitial-4.11.0_a9e1a5b6a6f50fcdd890af63359173f41b924b34.jar" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Users\Ranger\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.14.3\71218d7dd9435e8b43e5ccf117bec37cb78fa2eb\twitter-text-1.14.3.jar"
         jumboMode="false"
+=======
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-mopub\3.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="24d01029681c67ac64b0bc9ba7fd2c205374588e">
+        <dex dex="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.twitter.sdk.android-twitter-mopub-3.1.1_5e89c704e498f3e0ca10f47e1e1795a54b3cfb7f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\80576\Desktop\emisionn-bug-fix\emission-it2BugFix\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk-native-static\4.11.0\jars\classes.jar"
+        jumboMode="true"
+>>>>>>> origin/it33
         optimize="true"
         revision="25.0.3"
         sha1="71218d7dd9435e8b43e5ccf117bec37cb78fa2eb">

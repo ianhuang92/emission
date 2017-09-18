@@ -238,8 +238,14 @@ public class ChartFragment extends Fragment {
         BarData barData=new BarData(labels,barDataSets);
         barData.setDrawValues(true);
         barData.setValueTextSize(24);
+
         XAxis x = mChart.getXAxis();
+<<<<<<< HEAD
        // x.setGranularity(1f);
+=======
+        x.setGranularity(1f);
+        
+>>>>>>> origin/it33
         //x.setValueFormatter(formater);
         //x.setSpaceMax(15);
         x.setPosition(XAxis.XAxisPosition.BOTTOM);

@@ -101,7 +101,7 @@ public class CoffeeResultFragment extends Fragment {
             if (resultSO2 > 10000 && resultCO < 10000){
                 SO2Text.setTextColor(Color.RED);
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
-                COText.setTextColor(Color.GREEN);
+                COText.setTextColor(Color.parseColor("#54a295"));
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
 
                 recommandation.setText("You SO2 is over the threshold, you should lower you SO2 emission. \n You CO is good, keep going. Tips for you are: Try to be more energy efficient, for example you can change to some cleaner energy.");
@@ -112,7 +112,7 @@ public class CoffeeResultFragment extends Fragment {
                         .setPositiveButton(android.R.string.yes, null)
                         .setNegativeButton(android.R.string.no, null).show();
             }else if (resultSO2 < 10000 && resultCO > 10000){
-                SO2Text.setTextColor(Color.GREEN);
+                SO2Text.setTextColor(Color.parseColor("#54a295"));
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
                 COText.setTextColor(Color.RED);
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
@@ -139,9 +139,9 @@ public class CoffeeResultFragment extends Fragment {
                         .setPositiveButton(android.R.string.yes, null)
                         .setNegativeButton(android.R.string.no, null).show();
             }else{
-                SO2Text.setTextColor(Color.GREEN);
+                SO2Text.setTextColor(Color.parseColor("#54a295"));
                 SO2Text.setText("Emission of SO2 via Fuel Analysis: "+ resultSO2+" kg/year.");
-                COText.setTextColor(Color.GREEN);
+                COText.setTextColor(Color.parseColor("#54a295"));
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
                 if (resultCO < 500){
                     recommandation.setText("Both SO2 and CO is good, all under the threshold, keep going.\n\n Tips for you are :switching to LED lights and turning the espresso machine off at night ");
