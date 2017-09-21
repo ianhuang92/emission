@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv1_coffee_info_dm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:text="You may wish to use sample data to calculation emission of a particular period of time.\nYou should be aware
+that some tests undertaken for a State or Territory license condition may require the test be
+taken under maximum emissions rating, where emissions are likely to be higher than
+when operating under normal operating conditions.\nEmissions of ammonia may be determined by considering the losses from the refrigeration
+system in any given year. This information may be available through determining how
+much the refrigeration system required ‘topping up’ in a given year."
+        android:textAlignment="center"
+        android:layout_below="@+id/tv2_coffee_info_dm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
+
+    <TextView
+        android:id="@+id/tv2_coffee_info_dm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+
+        android:text="Direct Measurement"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/but_back_fragment_coffee_info_dm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:backgroundTint="@color/btncolor" />
+    </RelativeLayout>
+</LinearLayout>

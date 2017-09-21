@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="monash.emission.account.DashboardFragment">
+
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:id="@+id/welcomeText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:text="My Emission Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/textView18"
+        android:layout_below="@+id/reportBTN"
+        android:layout_alignEnd="@+id/reportBTN"
+        android:textStyle="normal|bold"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <ImageButton
+        android:text="Place Holder"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/button2"
+        android:textAllCaps="false"
+        android:layout_alignTop="@+id/button4"
+        android:layout_alignStart="@+id/reportBTN"
+        app:srcCompat="@drawable/noun_1129224_cc"
+        android:scaleType="fitCenter"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background" />
+
+    <ImageButton
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/noun_1006806_cc"
+        android:layout_marginTop="28dp"
+        android:id="@+id/reportBTN"
+        android:layout_marginStart="26dp"
+        android:layout_width="150dp"
+        android:layout_below="@+id/welcomeText"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        style="@android:style/Widget.DeviceDefault.ImageButton" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/noun_995444_cc"
+        android:id="@+id/rankBTN"
+        android:layout_marginEnd="24dp"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="12dp"
+        android:layout_above="@+id/textView19"
+        android:layout_alignParentEnd="true"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background" />
+
+    <TextView
+        android:text="Estimate Emission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/asd"
+        android:layout_below="@+id/button2"
+        android:layout_alignEnd="@+id/textView18"
+        android:textStyle="normal|bold"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <TextView
+        android:text="Air Quality  Info."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView31"
+        android:layout_below="@+id/button4"
+        android:layout_alignStart="@+id/textView19"
+        android:textStyle="normal|bold"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <ImageButton
+        android:text="Place Holder"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/button4"
+        android:layout_marginTop="34dp"
+        android:textAllCaps="false"
+        app:srcCompat="@drawable/noun_1124257_cc"
+        android:scaleType="fitCenter"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:layout_below="@+id/textView19"
+        android:layout_alignEnd="@+id/textView19" />
+
+    <TextView
+        android:text="My Emission Ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView19"
+        android:layout_below="@+id/reportBTN"
+        android:layout_alignEnd="@+id/rankBTN"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="normal|bold" />
+</RelativeLayout>
