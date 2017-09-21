@@ -7,7 +7,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:text="Click one emission records, and then enter the amount of coffee bean used in that period. We will estimate the relative emission value"
+        android:text="Click one emission records. We will estimate the relative emission value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"

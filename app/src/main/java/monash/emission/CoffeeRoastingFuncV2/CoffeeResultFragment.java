@@ -269,7 +269,7 @@ public class CoffeeResultFragment extends Fragment {
                                             //c.userBundle.putString("userdata",new Gson().toJson(user));
                                             //editor.putString("CurrentUser",user.getUsername()).commit();
                                             dialog.dismiss();
-                                            Intent i = new Intent(getActivity(), CoffeeRoastActivity.class);
+                                            Intent i = new Intent(getActivity(), AccountActivity.class);
                                             startActivity(i);//flag=false;
                                         }
                                     }

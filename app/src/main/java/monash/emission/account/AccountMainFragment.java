@@ -220,7 +220,7 @@ public class AccountMainFragment extends Fragment {
                             protected void onPostExecute(String result){
                                 if (result.equals("ERROR")){
                                     Toast.makeText(getActivity(),"Server Error",Toast.LENGTH_SHORT).show();
-                                }else if(result.length() == 0){
+                                }else if(result.equals("NOUSER")){
                                     Toast.makeText(getActivity(),"User does not exist",Toast.LENGTH_SHORT).show();
                                 }else {
                                     final UserInfo user = new Gson().fromJson(result,UserInfo.class);
