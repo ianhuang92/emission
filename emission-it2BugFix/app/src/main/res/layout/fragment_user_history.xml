@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,12 +32,12 @@
         android:text="Visualization in Chart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="34dp"
         android:id="@+id/button3"
         android:textAllCaps="false"
         android:textSize="18sp"
+        android:backgroundTint="@android:color/holo_blue_bright"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@android:color/holo_blue_bright" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
