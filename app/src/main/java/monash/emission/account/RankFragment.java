@@ -3,8 +3,10 @@ package monash.emission.account;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
@@ -35,6 +37,9 @@ public class RankFragment extends Fragment {
     private UserInfo currentUser;
     private UserDashboard u;
     public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+    SharedPreferences sharePreference;
+    private static final String myPreference = "MySharedPreference";
     public RankFragment() {
         // Required empty public constructor
     }
@@ -47,8 +52,13 @@ public class RankFragment extends Fragment {
         u = (UserDashboard)getActivity();
         vRank = inflater.inflate(R.layout.fragment_rank, container, false);
         lv = (ListView)vRank.findViewById(R.id.recordlv);
+        sharePreference =getActivity().getSharedPreferences(myPreference, Context.MODE_PRIVATE);
         currentUser = new Gson().fromJson(u.userBundle.getString("userdata"),UserInfo.class);
         final ArrayList<String> stringArrayList = new ArrayList<>();
+        if (currentUser == null){
+            currentUser = new Gson().fromJson(sharePreference.getString("userdata",null),UserInfo.class);
+        }
+
         for (EmissionRecord er:currentUser.getEmissionRecords()){
             stringArrayList.add(sdf.format(er.getStartdate()) + " to " + sdf.format(er.getEnddate()) + ", " + er.getName() + " : " + er.getLevel() + "kg");
         }

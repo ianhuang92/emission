@@ -138,7 +138,7 @@ public class CoffeeResultFragment extends Fragment {
                 COText.setText("Emission of CO via Fuel Analysis: "+ resultCO+" kg/year.");
                 recommandation.setText("Both SO2 and CO is over the threshold, you should lower you SO2 emission.\n\n Tips for you are :Switching coffee facility to solar panel\n" +
                         "Or using wind energy to help account for electricity usage at the roasting\n" +
-                        "Or biomass\n. ");
+                        " ");
                 new AlertDialog.Builder(getActivity())
                         .setTitle(Html.fromHtml("<font color='#FF0000'>Warning</font>"))
                         .setMessage("You SO2 level is " + resultSO2 + " ,which have exceed the threshold of 'SO2' (10000 tonnes per year) \n You CO level is " + resultCO + " ,which have exceed the threshold of 'CO' (10000 tonnes per year)")
@@ -161,7 +161,7 @@ public class CoffeeResultFragment extends Fragment {
                     recommandation.setText("Both SO2 and CO is good, all under the threshold, keep going. Tips for you are:Be more energy efficiency\n" +
                             "Switching coffee facility to solar panel\n" +
                             "Or using wind energy to help account for electricity usage at the roasting\n" +
-                            "Or biomass\n ");
+                            " ");
                 }
 
             }

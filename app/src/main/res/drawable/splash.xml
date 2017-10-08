@@ -8,7 +8,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/icon_reduce_green"/>
+            android:src="@mipmap/sp" />
     </item>
 
 

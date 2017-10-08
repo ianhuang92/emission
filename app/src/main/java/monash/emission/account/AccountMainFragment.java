@@ -137,7 +137,7 @@ public class AccountMainFragment extends Fragment {
                                     SharedPreferences.Editor editor = sharePreference.edit();
                                     //editor.putString(etUserName.getText().toString(),new Gson().toJson(newuser));
                                     editor.putString("CurrentUser",newUser.getUsername()).commit();//持久化用户实例，并设置CurrentUser为当前用户名
-
+                                    editor.putString("userdata",new Gson().toJson(newUser)).commit();
 
                                     if (flag){
                                         final Dialog dialog = new Dialog(getActivity());
@@ -152,6 +152,7 @@ public class AccountMainFragment extends Fragment {
                                                 newUser.setEmissionRecords((ArrayList<EmissionRecord>) new Gson().fromJson(sharePreference.getString("result",null),new TypeToken<ArrayList<EmissionRecord>>(){}.getType()));
                                                 SharedPreferences.Editor editor = sharePreference.edit();
                                                 editor.remove("useResult");
+                                                editor.putString("userdata",new Gson().toJson(newUser)).commit();
                                                // editor.putString(newUser.getUsername(),new Gson().toJson(newUser));
                                                 editor.commit();
                                                 ///
@@ -172,6 +173,7 @@ public class AccountMainFragment extends Fragment {
                                                             editor.remove("useResult");
                                                             //editor.putString(user.getUsername(),new Gson().toJson(user));
                                                             //c.userBundle.putString("userdata",new Gson().toJson(user));
+                                                            editor.putString("userdata",new Gson().toJson(newUser)).commit();
                                                             editor.putString("CurrentUser",newUser.getUsername()).commit();
                                                             dialog.dismiss();
                                                             Intent i = new Intent(getActivity(), CoffeeRoastActivity.class);
@@ -186,6 +188,8 @@ public class AccountMainFragment extends Fragment {
                                     }else{
                                         c.userBundle.putString("userType","login");
                                         newUser.setEmissionRecords(new ArrayList<EmissionRecord>());
+                                        newUser.setFactoryType("Coffee Roaster");
+                                        editor.putString("userdata",new Gson().toJson(newUser)).commit();
                                         c.userBundle.putString("userdata",new Gson().toJson(newUser));
                                         Intent i = new Intent(getActivity(), UserDashboard.class);
                                         i.putExtra("bundle",c.userBundle);
@@ -224,6 +228,7 @@ public class AccountMainFragment extends Fragment {
                                     Toast.makeText(getActivity(),"User does not exist",Toast.LENGTH_SHORT).show();
                                 }else {
                                     final UserInfo user = new Gson().fromJson(result,UserInfo.class);
+                                    user.setFactoryType("Coffee Roaster");
                                     if (user.getPassword().equals(etPasswd.getText().toString())){
                                         if (flag){
                                             final Dialog dialog = new Dialog(getActivity());
@@ -253,6 +258,7 @@ public class AccountMainFragment extends Fragment {
                                                                 editor.remove("useResult");
                                                                 //editor.putString(user.getUsername(),new Gson().toJson(user));
                                                                 //c.userBundle.putString("userdata",new Gson().toJson(user));
+                                                                editor.putString("userdata",new Gson().toJson(user)).commit();
                                                                 editor.putString("CurrentUser",user.getUsername()).commit();
                                                                 dialog.dismiss();flag=false;
                                                                 Intent i = new Intent(getActivity(), CoffeeRoastActivity.class);
@@ -281,10 +287,12 @@ public class AccountMainFragment extends Fragment {
                                                     if (result.length()!=0){
                                                         ArrayList<EmissionRecord> er = new Gson().fromJson(result,new TypeToken<ArrayList<EmissionRecord>>(){}.getType());
                                                         user.setEmissionRecords(er);
+                                                        user.setFactoryType("Coffee Roaster");
                                                         c.userBundle.putString("userdata",new Gson().toJson(user));
                                                         Intent i = new Intent(getActivity(), UserDashboard.class);
                                                         i.putExtra("bundle",c.userBundle);
                                                         SharedPreferences.Editor editor = sharePreference.edit();
+                                                        editor.putString("userdata",new Gson().toJson(user)).commit();
                                                         editor.putString("CurrentUser",user.getUsername()).commit();
                                                         startActivity(i);
                                                     }
@@ -327,6 +335,7 @@ public class AccountMainFragment extends Fragment {
                                     SharedPreferences.Editor editor = sharePreference.edit();
                                     editor.remove(guest.getUsername());
                                     editor.remove("useResult");
+                                    editor.putString("userdata",new Gson().toJson(guest)).commit();
                                     editor.putString("CurrentUser","guest");
                                     editor.putString(guest.getUsername(),new Gson().toJson(guest));
                                     editor.commit();
@@ -339,10 +348,10 @@ public class AccountMainFragment extends Fragment {
 
                             dialog.show();
                         }else{
-
                             SharedPreferences.Editor editor = sharePreference.edit();
                             editor.putString("guest", new Gson().toJson(guest));
                             editor.putString("CurrentUser","guest");
+                            editor.putString("userdata",new Gson().toJson(guest)).commit();
                             editor.commit();
                             c.userBundle.putString("userdata",new Gson().toJson(guest));
                             Intent i = new Intent (getActivity(), UserDashboard.class);

@@ -40,6 +40,9 @@ public class AccountActivity extends Activity{
                 currentUser = new Gson().fromJson(sharePreference.getString("guest",null), UserInfo.class);
                 Intent i = new Intent(getApplicationContext(), UserDashboard.class);
                 Bundle userBundle = new Bundle();
+                SharedPreferences.Editor editor = sharePreference.edit();
+                editor.putString("userdata",new Gson().toJson(currentUser));
+                editor.commit();
                 userBundle.putString("userdata",new Gson().toJson(currentUser));
                 userBundle.putString("userType","guest");
                 //Intent i = new Intent(getActivity(), UserDashboard.class);
@@ -70,6 +73,9 @@ public class AccountActivity extends Activity{
                                     currentUser.setEmissionRecords(er);
                                     Intent i = new Intent(getApplicationContext(), UserDashboard.class);
                                     Bundle userBundle = new Bundle();
+                                    SharedPreferences.Editor editor = sharePreference.edit();
+                                    editor.putString("userdata",new Gson().toJson(currentUser));
+                                    editor.commit();
                                     userBundle.putString("userdata",new Gson().toJson(currentUser));
                                     userBundle.putString("userType","login");
                                     //Intent i = new Intent(getActivity(), UserDashboard.class);
@@ -83,6 +89,9 @@ public class AccountActivity extends Activity{
                 }
             }.execute(sharePreference.getString("CurrentUser",null));}
         }else {
+            SharedPreferences.Editor editor = sharePreference.edit();
+            editor.putString("userdata",new Gson().toJson(currentUser));
+            editor.commit();
             fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, new AccountMainFragment()).commit();
         }

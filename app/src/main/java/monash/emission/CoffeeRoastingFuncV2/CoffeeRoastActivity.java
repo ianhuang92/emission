@@ -51,6 +51,13 @@ public class CoffeeRoastActivity extends AppCompatActivity implements Navigation
         navigationView.setNavigationItemSelectedListener(this);
 
         currentUser = new Gson().fromJson(getIntent().getStringExtra("u"),UserInfo.class);
+        if(currentUser == null){
+            currentUser = new Gson().fromJson(sharePreference.getString("userdata",null),UserInfo.class);
+        }else{
+            SharedPreferences.Editor editor = sharePreference.edit();
+            editor.putString("userdata",new Gson().toJson(currentUser));
+            editor.commit();
+        }
         sharedBundle = new Bundle();
         //About this bundle
         //Used Key -- Type -- Meaning
@@ -86,6 +93,9 @@ public class CoffeeRoastActivity extends AppCompatActivity implements Navigation
             Intent i = new Intent(getApplicationContext(), UserDashboard.class);
             i.putExtra("drawer",0);
             Bundle userBundle = new Bundle();
+            SharedPreferences.Editor editor = sharePreference.edit();
+            editor.putString("userdata",new Gson().toJson(currentUser));
+            editor.commit();
             userBundle.putString("userdata",new Gson().toJson(currentUser));
             userBundle.putString("userType","guest");
             //Intent i = new Intent(getActivity(), UserDashboard.class);
@@ -97,6 +107,9 @@ public class CoffeeRoastActivity extends AppCompatActivity implements Navigation
             Intent i = new Intent(getApplicationContext(), UserDashboard.class);
             i.putExtra("drawer",1);
             Bundle userBundle = new Bundle();
+            SharedPreferences.Editor editor = sharePreference.edit();
+            editor.putString("userdata",new Gson().toJson(currentUser));
+            editor.commit();
             userBundle.putString("userdata",new Gson().toJson(currentUser));
             userBundle.putString("userType","guest");
             //Intent i = new Intent(getActivity(), UserDashboard.class);
@@ -108,6 +121,9 @@ public class CoffeeRoastActivity extends AppCompatActivity implements Navigation
             Intent i = new Intent(getApplicationContext(), UserDashboard.class);
             i.putExtra("drawer",2);
             Bundle userBundle = new Bundle();
+            SharedPreferences.Editor editor = sharePreference.edit();
+            editor.putString("userdata",new Gson().toJson(currentUser));
+            editor.commit();
             userBundle.putString("userdata",new Gson().toJson(currentUser));
             userBundle.putString("userType","guest");
             //Intent i = new Intent(getActivity(), UserDashboard.class);

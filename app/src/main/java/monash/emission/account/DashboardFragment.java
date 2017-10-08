@@ -55,7 +55,7 @@ public class DashboardFragment extends Fragment {
                 welcomeTv.setText("Welcome " + currentUser.getUsername());
 
         }
-
+        welcomeTv.setText("Managing your emissions, making the world a better place!");
 
         ImageButton reportBTN = (ImageButton) vDb.findViewById(R.id.reportBTN);
         ImageButton rankBTN = (ImageButton) vDb.findViewById(R.id.rankBTN);

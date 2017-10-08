@@ -151,10 +151,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                                             @Override
                                             protected void onPostExecute(String result){
                                                 if (result.length()==0){
-                                                    weatherText.setText("Zip code not valid");
+                                                    weatherText.setText("Post code not valid");
                                                 }else if (result.equalsIgnoreCase("ZERO_RESULTS"))
                                                 {
-                                                    weatherText.setText("No result for that zip code");
+                                                    weatherText.setText("No result for that post code");
                                                 }
                                                 else{
                                                     new AsyncTask<String,Void,String>(){

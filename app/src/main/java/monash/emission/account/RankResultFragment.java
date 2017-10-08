@@ -108,8 +108,8 @@ public class RankResultFragment extends Fragment {
         //TwitterSession session = TwitterCore.getInstance().getSessionManager().getActiveSession();  //可以启用本行来获取下文中的session
         final Intent intent = new ComposerActivity.Builder(getActivity())  //change context to a corresponding one
                 .session(session)
-                .text("Love where you work") //推文正文
-                .hashtags("#twitter")   //推文标签
+                .text("I am using Emission Tracker and my Emission Rank is " + ranktv.getText()) //推文正文
+                .hashtags("#Emission Tracker")   //推文标签
                 .createIntent();
         startActivity(intent);
         //TODO 第三步结束

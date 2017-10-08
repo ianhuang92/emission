@@ -66,7 +66,9 @@ public class UserDashboard extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        if(userBundle.getString("userdata") == null) {
+            userBundle.putString("userdata", sharePreference.getString("userdata", null));
+        }
         int flag = getIntent().getIntExtra("drawer",0);
         switch (flag){
             case 0:fragmentManager = getFragmentManager();
@@ -164,6 +166,8 @@ public class UserDashboard extends AppCompatActivity
             startActivity(i);
             finish();
             return true;
+        }else if (id == R.id.nav_about){
+            nextFragment = new AboutFragment();
         }
         fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame,

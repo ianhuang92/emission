@@ -22,6 +22,10 @@
             android:id="@+id/nav_gallery2"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Air Quality Info." />
+
+        <item android:icon="@drawable/ic_menu_gallery"
+            android:title="About Page"
+            android:id="@+id/nav_about"></item>
     </group>
 
     <item android:title="Account Management">
